@@ -14,29 +14,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <hr class="d-md-none text-white-50">
 
-            <ul class="navbar-nav d-flex flex-row flex-wrap ml-auto">
-                <li class="nav-item col-2 col-md-auto ps-3" style="">
-                    <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif text-black">Home</a></li>
-                <li class="nav-item col-2 col-md-auto ps-3 ">
-                    <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Tentang Tajwidku</a>
-                </li>
-                <li class="nav-item col-2 col-md-auto ps-3 ">
-                    <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Materi</a></li>
-                <li class="nav-item col-2 col-md-auto ps-3 "><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Bimbingan</a></li>
-                <li class="nav-item col-2 col-md-auto ps-3 "><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Jadwalku</a></li>
-            </ul>
-            <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon text-black" style="color: red"></span>
-            </button>
+
 
             <div class="collapse navbar-collapse text-black" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto text-black">
+                {{-- <ul class="navbar-nav me-auto text-black"> --}}
 
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav d-flex flex-row flex-wrap ms-auto">
+                    <li class="nav-item col-2 col-md-auto ps-3" style="">
+                        <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif text-black">Home</a></li>
+                    <li class="nav-item col-2 col-md-auto ps-3 ">
+                        <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Tentang Tajwidku</a>
+                    </li>
+                    <li class="nav-item col-2 col-md-auto ps-3 ">
+                        <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Materi</a>
+                    </li>
+                    <li class="nav-item col-2 col-md-auto ps-3 "><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Bimbingan</a>
+                    </li>
+                    <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Jadwalku</a>
+                    </li>
+                    <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.register') active @endif text-danger">Daftar Akun</a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon text-black" style="color: red"></span>
+                </button>
+                {{-- <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
@@ -50,7 +56,7 @@
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a href="{{ route('profile') }}" class="btn my-2 ms-md-auto"><i class="bi-person-circle me-1"></i> My Profile</a>
                                 <a class="dropdown-item bi bi-lock-fill me-1" style="color: red" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -66,7 +72,7 @@
                             </div>
                         </li>
                     @endguest
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>
