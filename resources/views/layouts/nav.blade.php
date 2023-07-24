@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-light">
     <div class="container">
         <i class="hexagon-fill me-2"></i>
-        <img class=" navbar-brand mb-0 h1" style="width: 200px"
+        <img class=" navbar-brand mb-0 ms-5 h1 img-fluid" style="width: 150px"
         src="{{ Vite::asset('resources/images/logotajwidku.png') }}" alt="image" href="{{ route('home') }}">
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon text-black" style="color: red"></span>
@@ -27,16 +27,17 @@
                     <li class="nav-item col-2 col-md-auto ps-3" style="">
                         <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif text-black">Home</a></li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Tentang Tajwidku</a>
+                        <a href="{{ route('tentang') }}" class="nav-link @if($currentRouteName == 'tentang.index') active @endif text-black">Tentang Tajwidku</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Materi</a>
+                        <a href="{{ route('materi') }}" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
                     </li>
-                    <li class="nav-item col-2 col-md-auto ps-3 "><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Bimbingan</a>
+                    <li class="nav-item col-2 col-md-auto ps-3 ">
+                        <a href="{{ route('bimbingan') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
                     </li>
-                    <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif text-black">Jadwalku</a>
+                    <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('jadwal') }}" class="nav-link @if($currentRouteName == 'jadwal.index') active @endif text-black">Jadwalku</a>
                     </li>
-                    <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.register') active @endif text-danger">Daftar Akun</a>
+                    <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a>
                     </li>
                 </ul>
                 <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
