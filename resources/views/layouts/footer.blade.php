@@ -1,4 +1,4 @@
-<div class="footer mt-5">
+<div class="footer">
     <div class="row">
         <div class="footer-col">
             <div class="social-links">
