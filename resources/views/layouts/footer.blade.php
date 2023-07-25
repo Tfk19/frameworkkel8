@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="footer mt-5">
+=======
+<div class="footer">
+>>>>>>> 517c76753f7e53dc3469d7fddd044718685c9835
     <div class="row">
         <div class="footer-col">
             <div class="social-links">

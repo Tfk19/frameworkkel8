@@ -25,8 +25,13 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
+<<<<<<< HEAD
 Route::get('bimbingan', BimbinganController::class)->name('bimbingan');
 Route::get('jadwal', JadwalController::class)->name('jadwal');
+=======
+Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
+Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
+>>>>>>> 517c76753f7e53dc3469d7fddd044718685c9835
 // Route::resource('employees', EmployeeController::class)->middleware('auth');
 
 

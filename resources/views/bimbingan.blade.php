@@ -18,10 +18,16 @@
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
+<<<<<<< HEAD
   <h3 class="text-center fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" >خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَ عَلَّمَهُ</h3>
   <h3 class="text-center fs-2 fw-bold">"Sebaik-Baik Diantara Kamu Adalah</h3>
   <h3 class="text-center fs-2 fw-bold mb-5"> Orang Yang Belajar Al-Qur'an dan Mengajarkannya"</h3>
 
+=======
+  <div class="aa">
+    <button type="button" class="aa btn btn-success btn-lg col-2 mx-auto " style=:margin-top:-120px;height:50px"><b>LEBIH LANJUT</b></button>
+    </div>
+>>>>>>> 517c76753f7e53dc3469d7fddd044718685c9835
   <div class="card-group" style="height: 25rem;">
     <div class="card">
       <img class="card-img-top img" src="{{ Vite::asset('resources/images/kotak.png') }}" >
