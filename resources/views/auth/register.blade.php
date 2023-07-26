@@ -92,7 +92,7 @@
 <div>
     <p class="text-center fs-2 mt-5 fw-bold">Lebih Dari</p>
  <p class="text-center fw-bold" style="font-size: 120px; color:#234E52">1000 + PESERTA</P>
-    <p class="text-center fs-2 fw-bold">Telah Mengikuti Program Ini</p>
+    <p class="text-center fs-2 mb-5 fw-bold">Telah Mengikuti Program Ini</p>
 
 </div>
 
