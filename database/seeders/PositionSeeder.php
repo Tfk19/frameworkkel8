@@ -16,16 +16,23 @@ class PositionSeeder extends Seeder
     {
         DB::table('positions')->insert([
             [
-                'code' => 'PGJ',
-                'name' => 'Pengajar',
-                'description' => 'Pengajar'
+                'code' => 'PLJ',
+                'name' => 'Pelajar',
+                'description' => 'Seorang Pelajar'
             ],
             [
-                'code' => 'PJL',
-                'name' => 'Pelajar',
-                'description' => 'Pelajar'
+                'code' => 'PNJ',
+                'name' => 'Pengajar',
+                'description' => 'Seorang Pengajar'
+            ],
+            [
+                'code' => 'ADM',
+                'name' => 'Admin',
+                'description' => 'Seorang Admin'
             ],
         ]);
-        // Position::factory()->count(2)->create();
+
+        // Position::factory()->count(5)->create();
+
     }
 }

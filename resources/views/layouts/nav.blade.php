@@ -36,32 +36,26 @@
                         <a href="{{ route('bimbingan') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('jadwal') }}" class="nav-link @if($currentRouteName == 'jadwal.index') active @endif text-black">Jadwalku</a>
-                    </li>
-                    <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a>
-                    </li>
-                </ul>
-                <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon text-black" style="color: red"></span>
-                </button>
-                {{-- <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item text-black">
-                                <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item text">
+
+                                <a class="nav-link text fw-bold" style="color: red" href="{{ route('login') }}">{{ __('Login') }}</a>
+
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown text-black">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold"  style="color: #234E52" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('profile') }}" class="btn my-2 ms-md-auto"><i class="bi-person-circle me-1"></i> My Profile</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a  class="btn my-2 ms-md-auto"><i class="bi-person-circle me-1"></i> My Profile</a>
                                 <a class="dropdown-item bi bi-lock-fill me-1" style="color: red" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
 
                                 </a>
@@ -73,7 +67,14 @@
                             </div>
                         </li>
                     @endguest
-                </ul> --}}
+                </ul>
+                        </li>
+                    {{-- <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a>
+                    </li> --}}
+                <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon text-black" style="color: red"></span>
+                </button>
+
             </div>
         </div>
     </div>

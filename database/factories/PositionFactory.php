@@ -16,10 +16,18 @@ class PositionFactory extends Factory
      */
     public function definition(): array
     {
+<<<<<<< HEAD
         return [
             // 'code' => fake()->stateAbbr(),
             // 'name' => fake()->jobTitle(),
             // 'description' => fake()->sentence(),
         ];
+=======
+        // return [
+        //     'code' => fake()->stateAbbr(),
+        //     'name' => fake()->jobTitle(),
+        //     'description' => fake()->sentence(),
+        // ];
+>>>>>>> ccb256cd2a64b6f6f245589fb6744ce141fb6502
     }
 }

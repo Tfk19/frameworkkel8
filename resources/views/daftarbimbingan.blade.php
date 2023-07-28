@@ -7,7 +7,7 @@
   </div>
   <h3 class="text-center fs-2 fw-bold" style="color: #234E52; font-family: 'inter'; " ><b>TAJWIDKU</b></h3>
   <h3 class="text-center fs-1 fw-bold">FORM PENDAFTARAN </h3>
-  <h3 class="text-center fs-1 fw-bold mb-5"> AKUN</h3>
+  <h3 class="text-center fs-1 fw-bold mb-5"> BIMBINGAN</h3>
 
     <div class="">
         <div class="col">
