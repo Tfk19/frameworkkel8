@@ -3,11 +3,7 @@
 @section('content')
 <div class="ms-0 ps-0 me-0 container">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded mx-auto ms-5 pt-5 mt-5 mb-auto card-img-overlay img-fluid" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
-    <button type="button" class="btn btn-light btn-lg col-2 "style="margin-top:-120px;margin-left:25px;height:50px"><b  style="color: #234E52">DAFTAR SEKARANG</b></button>
-    <div class="aa">
-    <button type="button" class="aa btn btn-success btn-lg col-2  "style="margin-left:270px;margin-top:-120px;height:50px"><b>LEBIH LANJUT</b></button>
-    </div>
+    <img class="rounded ms-4 ps-4 mt-auto mb-5 pb-5 card-img-overlay img-fluid" style="width:500px" src="{{ Vite::asset('resources/images/materitajwid.png') }}" alt="text main">
 </div>
 
 </div>
@@ -17,46 +13,144 @@
 <br>
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
-  </div>
-  <h3 class="text-center fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" >خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَ عَلَّمَهُ</h3>
-  <h3 class="text-center fs-2 fw-bold">"Sebaik-Baik Diantara Kamu Adalah</h3>
-  <h3 class="text-center fs-2 fw-bold mb-5"> Orang Yang Belajar Al-Qur'an dan Mengajarkannya"</h3>
 
-  <div class="card-group" style="height: 25rem;">
-    <div class="card">
-      <img class="card-img-top img" src="{{ Vite::asset('resources/images/kotak.png') }}" >
-      <div class="card-img-overlay">
-        <h5 class="card-title mt-5 pt-4 ms-4 fs-2 fw-light " style="color: #ffffff">Ingin Bisa</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #ffffff">Mengaji Dengan</h5>
-        <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #ffffff">Lancar &</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #ffffff">Sesuai Kaidah</h5>
-        <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #ffffff">#siapmengaji</h5>
+</div>
+  <h3 class="text-center mt-0 fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" ><b>TAJWIDKU</b></h3>
+  <h1 class="text-center" style="color:black">HUKUM NUN SUKUN DAN TANWIN</h1>
+
+
+  <div class="card-group col-12 mt-5 pt-1" style="height: 25rem;">
+    <div class="card-group col-4" style="border: none">
+      <img class="card-img-top img col-1" src="{{ Vite::asset('resources/images/kotak.png') }}" >
+      <div class="card-img-overlay" style="margin-top: 1160px">
+        <h5 class="card-title mt-5 pt-4 ms-4 fs-2 fw-light " style="color: #ffffff">Apa Saja</h5>
+        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #ffffff">Hukum Nun Sukun</h5>
+        <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #ffffff">Dan Tanwin</h5>
+        <h5 class="card-title ms-4 fs-2 " style="color: #ffffff">Dalam Tajwid?</h5>
       </div>
 
     </div>
     <div class="card">
       <div class="card-body"  style="background-color:  #E2E8F0">
         <br>
-        <h5 class="card-title mt-5  pt-4 ms-4 fs-2 " style="color: #234E52">Ingin Belajar</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Ilmu Tajwid Dari</h5>
-        <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Dasar ?</h5>
-        <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-
-      </div>
-    </div>
-    <div class="card">
-      <div class ="card-body "  style="background-color:  #EDF2F7">
-        <br>
-        <h5 class="card-title mt-5 pt-4 ms-4 fs-2 " style="color: #234E52">Ingin Mengajarkan</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Ilmu Tajwid Kepada Orang</h5>
-        <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lain ?</h5>
-        <h5 class="card-title ms-4 fs-2 " style="color: #234E52">#siapmengaji</h5>
+        <h5 class="card-title mt-2 pt-0 ms-4 fs-2 " style="text-align:justify;color: #234E52">Hukum Nun Sukun dan Tanwin ada <b>5 macam</b>, yaitu :
+           <br>
+            <br>1. Idzhar Halqi
+           <br>2. Idhgom Bi Ghunnah
+           <br>3. Idhgom Bila Ghunnah
+            <br>4.Iqlab
+            <br>5. Ikhfa’ Haqiqi</h5>
       </div>
     </div>
   </div>
-  <p class="text-center fs-2 mt-5 fw-bold">Lebih Dari</p>
- <p class="text-center fw-bold" style="font-size: 120px; color:#234E52">1000 + PESERTA</P>
-    <p class="text-center fs-2 fw-bold">Telah Mengikuti Program Ini</p>
+    <div class="card-body"  style="background-color:  #ffffff">
+        <br>
+        <h5 class="card-title mt-2 mb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #234E52"><b>Idzhar Halqi</b>
+            <br>
+            Idzhar Halqi ialah nun sukun atau tanwin bertemu salah satu huruf :
+            <br>
+            ا,ح,خ,ع,غ,ه
+            <br>
+            Contoh :
+            منه
+    </div>
+    <div class="card-body"  style="background-color:  #234E52">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #ffffff"><b>Idgham Bi Ghunnah</b>
+            <br>
+            Idgham Bi Ghunnah ialah nun sukun atau tanwin bertemu salah satu huruf :
+            <br>
+            ي,ن,م,و
+            <br>
+            Contoh :
+            من يقول
+    </div>
+    <div class="card-body"  style="background-color:  #ffffff">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #234E52"><b>Idgham Bila Ghunnah</b>
+            <br>
+            Idgham Bila Ghunnah ialah nun sukun atau tanwin bertemu salah satu huruf :
+            <br>
+            ل,ر
+            <br>
+            Contoh :
+            من ربكم
+    </div>
+    <div class="card-body"  style="background-color:  #234E52">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #ffffff"><b>Iqlab</b>
+            <br>
+            Iqlab ialah nun sukun atau tanwin bertemu dengan huruf :
+            <br>
+            ب
+            <br>
+            Contoh :
+            من بعد
+    </div>
+    <div class="card-body"  style="background-color:  #ffffff">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #234E52"><b>Ikhfa' Haqiqi</b>
+            <br>
+            Ikhfa' Haqiqi ialah nun sukun atau tanwin bertemu salah satu huruf :
+            <br>
+            ت,ث,ج,د,ذ,ز,س,ش,ص,ض,ط,ظ,ف,ق,ك
+            <br>
+            Contoh :
+            من تحت
+    </div>
+
+    <div class="card-group col-12 mt-0 pt-1" style="height: 25rem;">
+        <div class="card-group col-4" style="border: none">
+          <img class="card-img-top img col-1" src="{{ Vite::asset('resources/images/kotak.png') }}" >
+          <div class="card-img-overlay" style="margin-top: 1160px">
+            <h5 class="card-title mt-5 pt-4 ms-4 fs-2 fw-light " style="color: #ffffff">Apa Saja</h5>
+            <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #ffffff">Hukum Mim Sukun</h5>
+            <h5 class="card-title ms-4 fs-2 " style="color: #ffffff">Dalam Tajwid?</h5>
+          </div>
+
+        </div>
+        <div class="card">
+          <div class="card-body"  style="background-color:  #E2E8F0">
+            <br>
+            <h5 class="card-title mt-2 pt-0 ms-4 fs-2 " style="text-align:justify;color: #234E52">Hukum Mim Sukun ada <b>3 macam</b>, yaitu :
+               <br>
+                <br>1. Idzhar Syafawi
+               <br>2. Ikhfa' Syafawi
+               <br>3. Idhgom Mimi
+          </div>
+        </div>
+      </div>
+      <div class="card-body"  style="background-color:  #ffffff">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #234E52"><b>Idzhar Syafawi</b>
+            <br>
+            Idzhar Syafawi ialah mim bertemu salah satu huruf <b>selain huruf م,ب</b>
+            <br>
+            Contoh :
+            انعت
+    </div>
+    <div class="card-body"  style="background-color:  #234E52">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #ffffff"><b>Ikhfa' Syafawi</b>
+            <br>
+            Ikhfa' Syafawi ialah mim sukun bertemu dengan huruf :
+            <br>
+            ب
+            <br>
+            Contoh :
+            اعتصم بااللّه
+    </div>
+    <div class="card-body"  style="background-color:  #ffffff">
+        <br>
+        <h5 class="card-title mt-2 mb-0 pb-4 pt-0 ms-4 fs-2 " style="text-align:center;color: #234E52"><b>Idhgam Mimi</b>
+            <br>
+            Idgham Mimi ialah mim sukun bertemu dengan huruf :
+            <br>
+            م
+            <br>
+            Contoh :
+            و مالهم من اللّه
+    </div>
 
     <div class="card text-bg-dark mt-5">
     <img src="{{ Vite::asset('resources/images/panjang.png') }}" class="card-img" style="height: 30rem" alt="...">
@@ -68,28 +162,4 @@
     </div>
   </div>
 
-  <div class="card-group display: flex;" style="height: 25rem;">
-    <div class="ms-4 mt-4 me-4 mb-4 pb-4 card display: flex;" style="outline: none">
-      <img class="card-img-top img" style="width: 180px" src="{{ Vite::asset('resources/images/persegipanjang.png') }}" >
-      <div class="card-img-overlay text-end me-3 " style="f">
-        <h5 class="card-title fs-2 fw-light " style="color: #234E52">Ingin Bisa</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Mengaji Dengan</h5>
-        <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
-        <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
-        <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-        <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
-      </div>
-    </div>
-
-      <div class="ms-4 mt-4 me-4 mb-4 pb-4 card display: flex;" style="outline: none">
-        <img class="card-img-top img" style="width: 180px" src="{{ Vite::asset('resources/images/persegipanjang.png') }}" >
-        <div class="card-img-overlay text-end me-3 " style="f">
-          <h5 class="card-title fs-2 fw-light " style="color: #234E52">Ingin Bisa</h5>
-          <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Mengaji Dengan</h5>
-          <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
-          <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
-          <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-          <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
-        </div>
-      </div>
 @endsection
