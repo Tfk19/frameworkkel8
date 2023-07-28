@@ -5,6 +5,7 @@
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
     <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
     <button type="button" class="btn btn-light btn-lg col-2 ms-5 "style="font-size:16px;margin-top:-500px;margin-left:25px;height:50px;border:none"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
+
     <div class="aa">
     <button type="button" class="aa btn btn-success btn-lg col-2  "style="font-size:16px;margin-left:270px;margin-top:-285px;height:50px;border:none"><b>LEBIH LANJUT</b></button>
     </div>
