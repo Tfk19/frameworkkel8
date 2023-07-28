@@ -4,7 +4,7 @@
 <div class="ms-0 ps-0 me-0 container">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
     <img class="rounded mx-auto ms-5 pt-5 mt-5 mb-auto card-img-overlay img-fluid" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
-    <button type="button" class="btn btn-light btn-lg col-2 "style="margin-top:-120px;margin-left:25px;height:50px"><b  style="color: #234E52"><a href="{{ route('register') }}" class="">DAFTAR SEKARANG</a></b></button>
+    <button type="button" class="btn btn-light btn-lg col-2 "style="margin-top:-120px;margin-left:25px;height:50px"><b  style="color: #234E52">DAFTAR SEKARANG</b></button>
     <div class="aa">
     <button type="button" class="aa btn btn-success btn-lg col-2  "style="margin-left:270px;margin-top:-120px;height:50px"><b>LEBIH LANJUT</b></button>
     </div>
@@ -18,10 +18,9 @@
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <h3 class="text-center fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" >خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَ عَلَّمَهُ</h3>
-  <h3 class="text-center fs-2 fw-bold">"Sebaik-Baik Diantara Kamu Adalah</h3>
-  <h3 class="text-center fs-2 fw-bold mb-5"> Orang Yang Belajar Al-Qur'an dan Mengajarkannya"</h3>
-
+  <div class="aa">
+    <button type="button" class="aa btn btn-success btn-lg col-2 mx-auto " style=:margin-top:-120px;height:50px"><b>LEBIH LANJUT</b></button>
+    </div>
   <div class="card-group" style="height: 25rem;">
     <div class="card">
       <img class="card-img-top img" src="{{ Vite::asset('resources/images/kotak.png') }}" >
@@ -92,5 +91,4 @@
           <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
-
 @endsection
