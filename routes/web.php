@@ -41,3 +41,7 @@ Route::get('getAdmins', [AdminController::class, 'getData'])->name('admins.getDa
 
 Route::get('exportExcel', [AdminController::class, 'exportExcel'])->name('admins.exportExcel');
 Route::get('exportPdf', [AdminController::class, 'exportPdf'])->name('admins.exportPdf');
+
+Route::get('/purnama', function() {
+    return 'Purnama';
+});
