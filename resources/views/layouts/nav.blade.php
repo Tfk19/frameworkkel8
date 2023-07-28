@@ -40,12 +40,14 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item text">
-                                <a class="nav-link text" style="color: red" href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                                <a class="nav-link text fw-bold" style="color: red" href="{{ route('login') }}">{{ __('Login') }}</a>
+
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown text-black">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold"  style="color: #234E52" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
