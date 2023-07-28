@@ -10,8 +10,8 @@ class Position extends Model
 {
     use HasFactory;
 
-    public function employees()
+    public function admins()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Admin::class);
     }
 }

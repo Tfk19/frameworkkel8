@@ -17,9 +17,9 @@ class PositionFactory extends Factory
     public function definition(): array
     {
         return [
-            'code' => fake()->stateAbbr(),
-            'name' => fake()->jobTitle(),
-            'description' => fake()->sentence(),
+            // 'code' => fake()->stateAbbr(),
+            // 'name' => fake()->jobTitle(),
+            // 'description' => fake()->sentence(),
         ];
     }
 }

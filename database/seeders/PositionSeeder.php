@@ -14,25 +14,18 @@ class PositionSeeder extends Seeder
      */
     public function run(): void
     {
-        // DB::table('positions')->insert([
-        //     [
-        //         'code' => 'FE',
-        //         'name' => 'Front End Developer',
-        //         'description' => 'Front End Developer'
-        //     ],
-        //     [
-        //         'code' => 'BE',
-        //         'name' => 'Back End Developer',
-        //         'description' => 'Back End Developer'
-        //     ],
-        //     [
-        //         'code' => 'SA',
-        //         'name' => 'System Analist',
-        //         'description' => 'System Analist'
-        //     ],
-        // ]);
-
-        Position::factory()->count(5)->create();
-
+        DB::table('positions')->insert([
+            [
+                'code' => 'PGJ',
+                'name' => 'Pengajar',
+                'description' => 'Pengajar'
+            ],
+            [
+                'code' => 'PJL',
+                'name' => 'Pelajar',
+                'description' => 'Pelajar'
+            ],
+        ]);
+        // Position::factory()->count(2)->create();
     }
 }
