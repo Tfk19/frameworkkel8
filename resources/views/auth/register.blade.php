@@ -76,10 +76,10 @@
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="position" class="form-label">Position</label>
-                            <select name="position" id="position" class="form-select">
-                                @foreach ($positions as $position)
-                                    <option value="{{ $position->id }}" {{ old('position') == $position->id ? 'selected' : '' }}>{{ $position->code.' - '.$position->name }}</option>
-                                @endforeach
+                            <select name="positions_id" id="positions_id" class="form-select">
+
+                                <option value="1">Pelajar</option>
+                                <option value="2">Pengajar</option>
                             </select>
                             @error('position')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
