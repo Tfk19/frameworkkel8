@@ -44,14 +44,14 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function register()
+    public function create()
     {
         $pageTitle = 'Register User';
 
         // ELOQUENT
         $positions = Position::all();
 
-        return view('auth.register', compact('pageTitle', 'positions'));
+        return view('auth.register', ['positions' =>$positions]);
     }
 
     public function store(Request $request)
