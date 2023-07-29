@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Position;
-use App\Models\Employee;
+use App\Models\User;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\exportExcel;
-use App\Exports\EmployeesExport;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
-class EmployeeController extends Controller
+class UserController extends Controller
 
 {
     /**
@@ -26,32 +26,32 @@ class EmployeeController extends Controller
 
     public function index()
     {
-        $pageTitle = 'Employee List';
+        $pageTitle = 'User List';
         // confirmDelete();
         // Query Builder
        // ELOQUENT
-    $employees = Employee::all();
+    $users = User::all();
 
-    return view('employee.index', [
+    return view('user.index', [
         'pageTitle' => $pageTitle,
-        'employees' => $employees
+        'users' => $users
     ]);
-    $pageTitle = 'Employee List';
+    $pageTitle = 'User List';
 
-    return view('employee.index', compact('pageTitle'));
+    return view('user.index', compact('pageTitle'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function register()
     {
-        $pageTitle = 'Create Employee';
+        $pageTitle = 'Register User';
 
         // ELOQUENT
         $positions = Position::all();
 
-        return view('employee.create', compact('pageTitle', 'positions'));
+        return view('auth.register', compact('pageTitle', 'positions'));
     }
 
     public function store(Request $request)
@@ -86,23 +86,23 @@ class EmployeeController extends Controller
     }
 
     // ELOQUENT
-    $employee = New Employee;
-    $employee->firstname = $request->firstName;
-    $employee->lastname = $request->lastName;
-    $employee->email = $request->email;
-    $employee->age = $request->age;
-    $employee->position_id = $request->position;
+    $user = New User;
+    $user->firstname = $request->firstName;
+    $user->lastname = $request->lastName;
+    $user->email = $request->email;
+    $user->age = $request->age;
+    $user->position_id = $request->position;
 
     if ($file != null) {
-        $employee->original_filename = $originalFilename;
-        $employee->encrypted_filename = $encryptedFilename;
+        $user->original_filename = $originalFilename;
+        $user->encrypted_filename = $encryptedFilename;
     }
 
-    $employee->save();
+    $user->save();
 
     Alert::success('Added Successfully', 'Employee Data Added Successfully.');
 
-        return redirect()->route('employees.index');
+        return redirect()->route('users.index');
 }
 
     /**
@@ -111,12 +111,12 @@ class EmployeeController extends Controller
 
     public function show(string $id)
     {
-        $pageTitle = 'Employee Detail';
+        $pageTitle = 'User Detail';
 
         // ELOQUENT
-        $employee = Employee::find($id);
+        $user = User::find($id);
 
-        return view('employee.show', compact('pageTitle', 'employee'));
+        return view('user.show', compact('pageTitle', 'user'));
     }
 
 
@@ -125,13 +125,13 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
 {
-    $pageTitle = 'Edit Employee';
+    $pageTitle = 'Edit User';
 
     // ELOQUENT
     $positions = Position::all();
-    $employee = Employee::find($id);
+    $user = User::find($id);
 
-    return view('employee.edit', compact('pageTitle', 'positions', 'employee'));
+    return view('user.edit', compact('pageTitle', 'positions', 'user'));
 }
 
 // use RealRashid\SweetAlert\Facades\Alert;
@@ -166,30 +166,30 @@ public function update(Request $request, string $id)
         $file->store('public/files');
 
 
-        $employee = Employee::find($id);
-        if ($employee->encrypted_filename) {
-            Storage::delete('public/files/'.$employee->encrypted_filename);
+        $user = User::find($id);
+        if ($user->encrypted_filename) {
+            Storage::delete('public/files/'.$user->encrypted_filename);
         }
     }
 
     // ELOQUENT
-    $employee = Employee::find($id);
-    $employee->firstname = $request->input('firstName');
-    $employee->lastname = $request->input('lastName');
-    $employee->email = $request->input('email');
-    $employee->age = $request->input('age');
-    $employee->position_id = $request->input('position');
+    $user = User::find($id);
+    $user->firstname = $request->input('firstName');
+    $user->lastname = $request->input('lastName');
+    $user->email = $request->input('email');
+    $user->age = $request->input('age');
+    $user->position_id = $request->input('position');
 
     if ($file != null) {
-        $employee->original_filename = $originalFilename;
-        $employee->encrypted_filename = $encryptedFilename;
+        $user->original_filename = $originalFilename;
+        $user->encrypted_filename = $encryptedFilename;
     }
 
-    $employee->save();
+    $user->save();
 
-    Alert::success('Changed Successfully', 'Employee Data Changed Successfully.');
+    Alert::success('Changed Successfully', 'User Data Changed Successfully.');
 
-    return redirect()->route('employees.index');
+    return redirect()->route('users.index');
 }
 
     /**
@@ -199,18 +199,18 @@ public function update(Request $request, string $id)
     public function destroy(string $id)
 {
     // ELOQUENT
-    Employee::find($id)->delete();
+    User::find($id)->delete();
 
-    Alert::success('Deleted Successfully', 'Employee Data Deleted Successfully.');
-    return redirect()->route('employees.index');
+    Alert::success('Deleted Successfully', 'User Data Deleted Successfully.');
+    return redirect()->route('users.index');
 
 }
 
-public function downloadFile($employeeId)
+public function downloadFile($userId)
 {
-    $employee = Employee::find($employeeId);
-    $encryptedFilename = 'public/files/'.$employee->encrypted_filename;
-    $downloadFilename = Str::lower($employee->firstname.'_'.$employee->lastname.'_cv.pdf');
+    $user = User::find($userId);
+    $encryptedFilename = 'public/files/'.$user->encrypted_filename;
+    $downloadFilename = Str::lower($user->firstname.'_'.$user->lastname.'_cv.pdf');
 
     if(Storage::exists($encryptedFilename)) {
         return Storage::download($encryptedFilename, $downloadFilename);
@@ -218,29 +218,29 @@ public function downloadFile($employeeId)
 }
 public function getData(Request $request)
 {
-    $employees = Employee::with('position');
+    $users = User::with('position');
 
     if ($request->ajax()) {
-        return datatables()->of($employees)
+        return datatables()->of($users)
             ->addIndexColumn()
-            ->addColumn('actions', function($employee) {
-                return view('employee.actions', compact('employee'));
+            ->addColumn('actions', function($user) {
+                return view('user.actions', compact('user'));
             })
             ->toJson();
     }
 }
 public function exportExcel()
 {
-    return Excel::download(new EmployeesExport, 'employees.xlsx');
+    return Excel::download(new UsersExport, 'users.xlsx');
 }
 
 public function exportPdf()
 {
-    $employees = Employee::all();
+    $users = User::all();
 
-    $pdf = PDF::loadView('employee.export_pdf', compact('employees'));
+    $pdf = PDF::loadView('user.export_pdf', compact('users'));
 
-    return $pdf->download('employees.pdf');
+    return $pdf->download('users.pdf');
 }
 
 }
