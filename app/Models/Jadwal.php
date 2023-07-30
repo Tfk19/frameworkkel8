@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Database\Factories\PositionFactory;
+use Database\Factories\JadwalFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Position extends Model
+class Jadwal extends Model
 {
     use HasFactory;
 
-    public function users()
+    public function bimbingans()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Bimbingan::class);
     }
 }

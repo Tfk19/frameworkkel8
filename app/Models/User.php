@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'no-hp',
+        'positions_id'
     ];
 
     /**
@@ -41,4 +43,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    use HasFactory;
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
+    public function register()
+{
+    $pageTitle = 'Register User';
+
+    return view('auth.register', compact('pageTitle'));
+}
 }
