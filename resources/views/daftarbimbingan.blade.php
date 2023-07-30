@@ -18,12 +18,12 @@
 
                         <div class="row mb-3">
 
-                            <label for="name" class="col-md-8 mx-auto fw-bold mt-5 fs-5" style="color: #ffffff">{{ __('Nama') }}</label>
+                            <label for="nama" class="col-md-8 mx-auto fw-bold mt-5 fs-5" style="color: #ffffff">{{ __('Nama') }}</label>
 
                             <div class="col-md-8 mx-auto mt-2">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
 
-                                @error('name')
+                                @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -32,12 +32,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('Email Address') }}</label>
+                            <label for="umur" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('Umur') }}</label>
 
                             <div class="col-md-8 mx-auto mt-2">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="umur" type="umur" class="form-control @error('umur') is-invalid @enderror" name="umur" value="{{ old('umur') }}" required autocomplete="umur">
 
-                                @error('email')
+                                @error('umur')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -46,12 +46,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('Password') }}</label>
+                            <label for="domisili" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('Domisili') }}</label>
 
                             <div class="col-md-8 mx-auto mt-2">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="domisili" type="domisili" class="form-control @error('domisili') is-invalid @enderror" name="domisili" required autocomplete="domisili">
 
-                                @error('password')
+                                @error('domisili')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -59,22 +59,22 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('Re-Password') }}</label>
+                        <div class="col-md-12 mb-3">
+                            <label for="jadwal" class="form-label">Method Bimbingan</label>
+                            <select name="jadwals_id" id="jadwals_id" class="form-select">
 
-                            <div class="col-md-8 mx-auto mt-2 ">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                                <option value="1">Offline -- Pagi</option>
+                                <option value="2">Offline -- Siang</option>
+                                <option value="3">Offline -- Malam</option>
+                                <option value="4">Online -- Pagi</option>
+                                <option value="5">Online -- Siang</option>
+                                <option value="6">Online -- Malam</option>
+
+                            </select>
+                            @error('position')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
+                            @enderror
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="no-hp" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">{{ __('No-HP') }}</label>
-
-                            <div class="col-md-8 mx-auto mt-2 ">
-                                <input id="no-hp" type="integer" class="form-control @error('no-hp') is-invalid @enderror" name="no-hp" value="{{ old('no-hp') }}" required autocomplete="no-hp" autofocus>
-                            </div>
-                        </div>
-
 
                         <div class="row">
                             <div class="mx-auto"></div>">

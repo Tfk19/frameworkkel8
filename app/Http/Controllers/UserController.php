@@ -44,15 +44,6 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        $pageTitle = 'Register User';
-
-        // ELOQUENT
-        $positions = Position::all();
-
-        return view('auth.register', ['positions' =>$positions]);
-    }
 
     public function store(Request $request)
 {
@@ -86,17 +77,17 @@ class UserController extends Controller
     }
 
     // ELOQUENT
-    $user = New User;
-    $user->firstname = $request->firstName;
-    $user->lastname = $request->lastName;
-    $user->email = $request->email;
-    $user->age = $request->age;
-    $user->position_id = $request->position;
+    // $user = New User;
+    // $user->firstname = $request->firstName;
+    // $user->lastname = $request->lastName;
+    // $user->email = $request->email;
+    // $user->age = $request->age;
+    // $user->position_id = $request->position;
 
-    if ($file != null) {
-        $user->original_filename = $originalFilename;
-        $user->encrypted_filename = $encryptedFilename;
-    }
+    // if ($file != null) {
+    //     $user->original_filename = $originalFilename;
+    //     $user->encrypted_filename = $encryptedFilename;
+    // }
 
     $user->save();
 

@@ -16,7 +16,7 @@
   </div>
   <div class="row mb-0">
     <div class="col align-center">
-        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href=""style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
+        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('daftarbimbingan') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
         </button>
     </div>
 </div>
