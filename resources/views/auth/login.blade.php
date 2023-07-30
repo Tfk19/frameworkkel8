@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container mb-5 " style="background-color: #234E52">
+    <div class="row justify-content-center" >
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card mt-5 mb-5">
+                <div class=" text-center mx-auto mt-2 mb-4" style="width: 70px;">
+                    <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
+                  </div>
+                  <h3 class="text-center fs-3 fw-bold mb-3" style="color: #234E52; font-family: 'inter';" >Login</h3>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -50,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="">
+                        <button type="submit" class="btn btn-primary" style="margin-left: 250px" >
                             {{ __('Login') }}
                         </button>
 
@@ -59,8 +62,8 @@
                             </div>
                         </div>
                     </form>
-                    {{-- <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a> --}}
-                        <button type="button" class="btn btn-light btn-lg col-2 "style="margin-top:-120px;margin-left:25px;height:50px"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
+
+                        <button type="button" class="btn btn-light btn-lg col-2 " style="margin-left: 250px;margin-bottom: px"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
                     </li>
                 </div>
             </div>
@@ -68,5 +71,5 @@
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 @endsection

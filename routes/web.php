@@ -35,6 +35,12 @@ Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth'
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('employees.downloadFile');
+
+Route::get('getEmployees', [EmployeeController::class, 'getData'])->name('employees.getData');
+
+Route::get('exportExcel', [EmployeeController::class, 'exportExcel'])->name('employees.exportExcel');
+Route::get('exportPdf', [EmployeeController::class, 'exportPdf'])->name('employees.exportPdf');
 Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('admmins.downloadFile');
 
 Route::get('getAdmins', [AdminController::class, 'getData'])->name('admins.getData');
