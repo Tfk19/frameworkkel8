@@ -6,7 +6,7 @@ use App\Http\Controllers\DaftarBimbinganController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\AdminController;
+// use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -27,9 +27,15 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
+<<<<<<< HEAD
+// Route::resource('admins', AdminController::class);
+// Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
+Route::get('bimbingan', BimbinganController::class)->name('bimbingan');
+=======
 Route::resource('admins', AdminController::class);
 Route::get('daftarbimbingan', DaftarBimbinganController::class)->name('daftarbimbingan');
 Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
+>>>>>>> 1f4fd0ebbac74530ec26d31e517a02a034e77fbc
 Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
 // Route::resource('employees', EmployeeController::class)->middleware('auth');
 

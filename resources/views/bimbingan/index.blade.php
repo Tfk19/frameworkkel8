@@ -14,20 +14,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($admins as $admin)
+            @foreach ($Bimbingans as $Bimbingan)
                 <tr>
-                    <td>{{ $admin->firstname }}</td>
-                    <td>{{ $admin->lastname }}</td>
-                    <td>{{ $admin->email }}</td>
-                    <td>{{ $admin->age }}</td>
-                    <td>{{ $admin->position->name }}</td>
+                    <td>{{ $Bimbingan->firstname }}</td>
+                    <td>{{ $Bimbingan->lastname }}</td>
+                    <td>{{ $Bimbingan->email }}</td>
+                    <td>{{ $Bimbingan->age }}</td>
+                    <td>{{ $Bimbingan->position->name }}</td>
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('admins.show', ['admin' => $admin->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-person-lines-fill"></i></a>
-                            <a href="{{ route('admins.edit', ['admin' => $admin->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-pencil-square"></i></a>
+                            <a href="{{ route('Bimbingans.show', ['Bimbingan' => $Bimbingan->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-person-lines-fill"></i></a>
+                            <a href="{{ route('Bimbingans.edit', ['Bimbingan' => $Bimbingan->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-pencil-square"></i></a>
 
                             <div>
-                                <form action="{{ route('admins.destroy', ['admin' => $admin->id]) }}" method="POST">
+                                <form action="{{ route('Bimbingans.destroy', ['Bimbingan' => $Bimbingan->id]) }}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-outline-dark btn-sm me-2"><i class="bi-trash"></i></button>
