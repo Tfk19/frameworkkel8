@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Admin;
 use App\Models\Position;
-use App\Models\User;
+use App\Models\Bimbingan;
+// use App\Models\Admin;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\exportExcel;
-use App\Exports\UsersExport;
+use App\Exports\AdminsExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -17,33 +19,38 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
-class UserController extends Controller
+class AdminController extends Controller
 
 {
     /**
      * Display a listing of the resource.
      */
 
-    public function index()
-    {
-        $pageTitle = 'User List';
-        // confirmDelete();
-        // Query Builder
-       // ELOQUENT
-    $users = User::all();
+     public function index()
+     {
+         $pageTitle = 'List Produk';
 
-    return view('user.index', [
-        'pageTitle' => $pageTitle,
-        'users' => $users
-    ]);
-    $pageTitle = 'User List';
+         // Eloquent ORM with select
+         $bimbingans = Bimbingan::all();
 
-    return view('user.index', compact('pageTitle'));
-    }
 
+         return view('admin.index', [
+             'pageTitle' => $pageTitle,
+             'bimbingan' => $bimbingans
+         ]);
+     }
     /**
      * Show the form for creating a new resource.
      */
+    public function create()
+    {
+        $pageTitle = 'Create Data';
+
+        // ELOQUENT
+        $positions = Position::all();
+
+        return view('admin.create', compact('pageTitle', 'positions'));
+    }
 
     public function store(Request $request)
 {
@@ -77,38 +84,40 @@ class UserController extends Controller
     }
 
     // ELOQUENT
-    // $user = New User;
-    // $user->firstname = $request->firstName;
-    // $user->lastname = $request->lastName;
-    // $user->email = $request->email;
-    // $user->age = $request->age;
-    // $user->position_id = $request->position;
+    $admin = New admin;
+    $admin->firstname = $request->firstName;
+    $admin->lastname = $request->lastName;
+    $admin->email = $request->email;
+    $admin->age = $request->age;
+    $admin->position_id = $request->position;
 
-    // if ($file != null) {
-    //     $user->original_filename = $originalFilename;
-    //     $user->encrypted_filename = $encryptedFilename;
-    // }
+    if ($file != null) {
+        $admin->original_filename = $originalFilename;
+        $admin->encrypted_filename = $encryptedFilename;
+    }
 
-    $user->save();
+    $admin->save();
 
-    Alert::success('Added Successfully', 'Employee Data Added Successfully.');
+    Alert::success('Added Successfully', 'admin Data Added Successfully.');
 
-        return redirect()->route('users.index');
+        return redirect()->route('admins.index');
 }
 
     /**
      * Display the specified resource.
      */
 
+
     public function show(string $id)
     {
-        $pageTitle = 'User Detail';
+        $pageTitle = 'Detail';
 
         // ELOQUENT
-        $user = User::find($id);
+        $admin = Admin::find($id);
 
-        return view('user.show', compact('pageTitle', 'user'));
+        return view('admin.show', compact('pageTitle', 'admin'));
     }
+
 
 
     /**
@@ -116,13 +125,13 @@ class UserController extends Controller
      */
     public function edit(string $id)
 {
-    $pageTitle = 'Edit User';
+    $pageTitle = 'Edit admin';
 
     // ELOQUENT
     $positions = Position::all();
-    $user = User::find($id);
+    $admin = admin::find($id);
 
-    return view('user.edit', compact('pageTitle', 'positions', 'user'));
+    return view('admin.edit', compact('pageTitle', 'positions', 'admin'));
 }
 
 // use RealRashid\SweetAlert\Facades\Alert;
@@ -157,30 +166,30 @@ public function update(Request $request, string $id)
         $file->store('public/files');
 
 
-        $user = User::find($id);
-        if ($user->encrypted_filename) {
-            Storage::delete('public/files/'.$user->encrypted_filename);
+        $admin = admin::find($id);
+        if ($admin->encrypted_filename) {
+            Storage::delete('public/files/'.$admin->encrypted_filename);
         }
     }
 
     // ELOQUENT
-    $user = User::find($id);
-    $user->firstname = $request->input('firstName');
-    $user->lastname = $request->input('lastName');
-    $user->email = $request->input('email');
-    $user->age = $request->input('age');
-    $user->position_id = $request->input('position');
+    $admin = admin::find($id);
+    $admin->firstname = $request->input('firstName');
+    $admin->lastname = $request->input('lastName');
+    $admin->email = $request->input('email');
+    $admin->age = $request->input('age');
+    $admin->position_id = $request->input('position');
 
     if ($file != null) {
-        $user->original_filename = $originalFilename;
-        $user->encrypted_filename = $encryptedFilename;
+        $admin->original_filename = $originalFilename;
+        $admin->encrypted_filename = $encryptedFilename;
     }
 
-    $user->save();
+    $admin->save();
 
-    Alert::success('Changed Successfully', 'User Data Changed Successfully.');
+    Alert::success('Changed Successfully', 'admin Data Changed Successfully.');
 
-    return redirect()->route('users.index');
+    return redirect()->route('admins.index');
 }
 
     /**
@@ -190,18 +199,18 @@ public function update(Request $request, string $id)
     public function destroy(string $id)
 {
     // ELOQUENT
-    User::find($id)->delete();
+    admin::find($id)->delete();
 
-    Alert::success('Deleted Successfully', 'User Data Deleted Successfully.');
-    return redirect()->route('users.index');
+    Alert::success('Deleted Successfully', 'admin Data Deleted Successfully.');
+    return redirect()->route('admins.index');
 
 }
 
-public function downloadFile($userId)
+public function downloadFile($adminId)
 {
-    $user = User::find($userId);
-    $encryptedFilename = 'public/files/'.$user->encrypted_filename;
-    $downloadFilename = Str::lower($user->firstname.'_'.$user->lastname.'_cv.pdf');
+    $admin = admin::find($adminId);
+    $encryptedFilename = 'public/files/'.$admin->encrypted_filename;
+    $downloadFilename = Str::lower($admin->firstname.'_'.$admin->lastname.'_cv.pdf');
 
     if(Storage::exists($encryptedFilename)) {
         return Storage::download($encryptedFilename, $downloadFilename);
@@ -209,29 +218,29 @@ public function downloadFile($userId)
 }
 public function getData(Request $request)
 {
-    $users = User::with('position');
+    $admins = admin::with('position');
 
     if ($request->ajax()) {
-        return datatables()->of($users)
+        return datatables()->of($admins)
             ->addIndexColumn()
-            ->addColumn('actions', function($user) {
-                return view('user.actions', compact('user'));
+            ->addColumn('actions', function($admin) {
+                return view('admin.actions', compact('admin'));
             })
             ->toJson();
     }
 }
 public function exportExcel()
 {
-    return Excel::download(new UsersExport, 'users.xlsx');
+    return Excel::download(new adminsExport, 'admins.xlsx');
 }
 
 public function exportPdf()
 {
-    $users = User::all();
+    $admins = admin::all();
 
-    $pdf = PDF::loadView('user.export_pdf', compact('users'));
+    $pdf = PDF::loadView('admin.export_pdf', compact('admins'));
 
-    return $pdf->download('users.pdf');
+    return $pdf->download('admins.pdf');
 }
 
 }
