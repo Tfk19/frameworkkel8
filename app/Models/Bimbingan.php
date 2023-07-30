@@ -10,15 +10,9 @@ class Bimibingan extends Model
 {
     use HasFactory;
 
-    public function jadwal()
+    public function jadwals()
     {
-        return $this->belongsTo(Jadwal::class);
-    }
-    public function registerbimbingan()
-    {
-        $pageTitle = 'Register Bimbingan';
-
-        return view('daftarbimbingan', compact('pageTitle'));
+        return $this->hasMany(Jadwal::class);
     }
 
 }

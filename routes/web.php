@@ -2,6 +2,7 @@
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\BimbinganController;
+use App\Http\Controllers\BimbinganlihatController;
 use App\Http\Controllers\DaftarBimbinganController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\HomeController;
@@ -27,10 +28,12 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
-Route::resource('admins', AdminController::class);
+Route::resource('bimbingans', BimbinganController::class)->middleware('auth');
 Route::get('daftarbimbingan', DaftarBimbinganController::class)->name('daftarbimbingan');
-Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
+Route::get('bimbinganlihat', BimbinganlihatController::class)->name('bimbinganlihat')->middleware('auth');
 Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
+Route::resource('admins', AdminController::class);
+
 // Route::resource('employees', EmployeeController::class)->middleware('auth');
 
 

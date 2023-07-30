@@ -16,9 +16,11 @@
   </div>
   <div class="row mb-0">
     <div class="col align-center">
-        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('daftarbimbingan') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
-        </button>
-    </div>
+        <li class="list-inline-item">
+            <a href="{{ route('Bimbingan.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-1"></i> Create Employee
+            </a>
+           </li>    </div>
 </div>
   <div class="card-group" style="height: 25rem;">
     <div class="card">
@@ -91,3 +93,46 @@
         </div>
       </div>
 @endsection
+
+{{-- @extends('layouts.app')
+
+@section('content')
+<div class="container mt-4">
+    <table class="table table-bordered table-hover table-striped mb-0 bg-white">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Domisili</th>
+                <th>Jadwal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($bimbingans as $bimbingan)
+                <tr>
+                    <td>{{ $bimbingan->nama }}</td>
+                    <td>{{ $bimbingan->umur }}</td>
+                    <td>{{ $bimbingan->domisili }}</td>
+                    <td>{{ $bimbingan->jadwal->methodbimbingan }}</td>
+                    <td>{{ $bimbingan->jadwal->waktubimbingan }}</td>
+                    <td>
+                        <div class="d-flex">
+                            <a href="{{ route('bimbingans.show', ['bimbingan' => $bimbingan->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-person-lines-fill"></i></a>
+                            <a href="{{ route('bimbingans.edit', ['bimbingan' => $bimbingan->id]) }}" class="btn btn-outline-dark btn-sm me-2"><i class="bi-pencil-square"></i></a>
+
+                            <div>
+                                <form action="{{ route('bimbingans.destroy', ['bimbingan' => $bimbingan->id]) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-outline-dark btn-sm me-2"><i class="bi-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+@endsection --}}

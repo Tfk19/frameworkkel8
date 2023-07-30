@@ -34,7 +34,7 @@ class AdminController extends Controller
          $bimbingans = Bimbingan::all();
 
 
-         return view('admin.index', [
+         return view('bimbingan.index', [
              'pageTitle' => $pageTitle,
              'bimbingan' => $bimbingans
          ]);
@@ -47,9 +47,9 @@ class AdminController extends Controller
         $pageTitle = 'Create Data';
 
         // ELOQUENT
-        $positions = Position::all();
+        $jadwals = Position::all();
 
-        return view('admin.create', compact('pageTitle', 'positions'));
+        return view('bimbingan.create', compact('pageTitle', 'jadwals'));
     }
 
     public function store(Request $request)
@@ -61,10 +61,9 @@ class AdminController extends Controller
     ];
 
     $validator = Validator::make($request->all(), [
-        'firstName' => 'required',
-        'lastName' => 'required',
-        'email' => 'required|email',
-        'age' => 'required|numeric',
+        'nama' => 'required',
+        'umur' => 'required',
+        'domisili' => 'required',
     ], $messages);
 
     if ($validator->fails()) {
@@ -84,23 +83,22 @@ class AdminController extends Controller
     }
 
     // ELOQUENT
-    $admin = New admin;
-    $admin->firstname = $request->firstName;
-    $admin->lastname = $request->lastName;
-    $admin->email = $request->email;
-    $admin->age = $request->age;
-    $admin->position_id = $request->position;
+    $bimbingan = New bimbingan;
+    $bimbingan->nama = $request->nama;
+    $bimbingan->umur = $request->umur;
+    $bimbingan->domisili = $request->domisili;
+    $bimbingan->jadwal_id = $request->jadwal;
 
     if ($file != null) {
-        $admin->original_filename = $originalFilename;
-        $admin->encrypted_filename = $encryptedFilename;
+        $bimbingan->original_filename = $originalFilename;
+        $bimbingan->encrypted_filename = $encryptedFilename;
     }
 
-    $admin->save();
+    $bimbingan->save();
 
-    Alert::success('Added Successfully', 'admin Data Added Successfully.');
+    Alert::success('Added Successfully', 'bimbingan Data Added Successfully.');
 
-        return redirect()->route('admins.index');
+        return redirect()->route('bimbingans.index');
 }
 
     /**
@@ -113,9 +111,9 @@ class AdminController extends Controller
         $pageTitle = 'Detail';
 
         // ELOQUENT
-        $admin = Admin::find($id);
+        $bimbingan = Bimbingan::find($id);
 
-        return view('admin.show', compact('pageTitle', 'admin'));
+        return view('bimbingan.show', compact('pageTitle', 'bimbingan'));
     }
 
 
@@ -125,13 +123,13 @@ class AdminController extends Controller
      */
     public function edit(string $id)
 {
-    $pageTitle = 'Edit admin';
+    $pageTitle = 'Edit bimbingan';
 
     // ELOQUENT
-    $positions = Position::all();
-    $admin = admin::find($id);
+    $jadwals = Jadwal::all();
+    $bimbingan = bimbingan::find($id);
 
-    return view('admin.edit', compact('pageTitle', 'positions', 'admin'));
+    return view('bimbingan.edit', compact('pageTitle', 'jadwals', 'bimbingan'));
 }
 
 // use RealRashid\SweetAlert\Facades\Alert;
@@ -144,10 +142,9 @@ public function update(Request $request, string $id)
     ];
 
     $validator = Validator::make($request->all(), [
-        'firstName' => 'required',
-        'lastName' => 'required',
-        'email' => 'required|email',
-        'age' => 'required|numeric',
+        'nama' => 'required',
+        'umur' => 'required',
+        'domisili' => 'required',
     ], $messages);
 
     if ($validator->fails()) {
@@ -166,30 +163,29 @@ public function update(Request $request, string $id)
         $file->store('public/files');
 
 
-        $admin = admin::find($id);
-        if ($admin->encrypted_filename) {
-            Storage::delete('public/files/'.$admin->encrypted_filename);
+        $bimbingan = bimbingan::find($id);
+        if ($bimbingan->encrypted_filename) {
+            Storage::delete('public/files/'.$bimbingan->encrypted_filename);
         }
     }
 
     // ELOQUENT
-    $admin = admin::find($id);
-    $admin->firstname = $request->input('firstName');
-    $admin->lastname = $request->input('lastName');
-    $admin->email = $request->input('email');
-    $admin->age = $request->input('age');
-    $admin->position_id = $request->input('position');
+    $bimbingan = bimbingan::find($id);
+    $bimbingan->nama = $request->input('nama');
+    $bimbingan->umur = $request->input('umur');
+    $bimbingan->domisili = $request->input('domisili');
+    $bimbingan->jadwal_id = $request->input('jadwal');
 
     if ($file != null) {
-        $admin->original_filename = $originalFilename;
-        $admin->encrypted_filename = $encryptedFilename;
+        $bimbingan->original_filename = $originalFilename;
+        $bimbingan->encrypted_filename = $encryptedFilename;
     }
 
-    $admin->save();
+    $bimbingan->save();
 
-    Alert::success('Changed Successfully', 'admin Data Changed Successfully.');
+    Alert::success('Changed Successfully', 'bimbingan Data Changed Successfully.');
 
-    return redirect()->route('admins.index');
+    return redirect()->route('bimbingans.index');
 }
 
     /**
@@ -199,18 +195,18 @@ public function update(Request $request, string $id)
     public function destroy(string $id)
 {
     // ELOQUENT
-    admin::find($id)->delete();
+    bimbingan::find($id)->delete();
 
-    Alert::success('Deleted Successfully', 'admin Data Deleted Successfully.');
-    return redirect()->route('admins.index');
+    Alert::success('Deleted Successfully', 'bimbingan Data Deleted Successfully.');
+    return redirect()->route('bimbingans.index');
 
 }
 
-public function downloadFile($adminId)
+public function downloadFile($bimbinganId)
 {
-    $admin = admin::find($adminId);
-    $encryptedFilename = 'public/files/'.$admin->encrypted_filename;
-    $downloadFilename = Str::lower($admin->firstname.'_'.$admin->lastname.'_cv.pdf');
+    $bimbingan = bimbingan::find($bimbinganId);
+    $encryptedFilename = 'public/files/'.$bimbingan->encrypted_filename;
+    $downloadFilename = Str::lower($bimbingan->firstname.'_'.$bimbingan->lastname.'_cv.pdf');
 
     if(Storage::exists($encryptedFilename)) {
         return Storage::download($encryptedFilename, $downloadFilename);
@@ -218,29 +214,29 @@ public function downloadFile($adminId)
 }
 public function getData(Request $request)
 {
-    $admins = admin::with('position');
+    $bimbingans = bimbingan::with('jadwal');
 
     if ($request->ajax()) {
-        return datatables()->of($admins)
+        return datatables()->of($bimbingans)
             ->addIndexColumn()
-            ->addColumn('actions', function($admin) {
-                return view('admin.actions', compact('admin'));
+            ->addColumn('actions', function($bimbingan) {
+                return view('bimbingan.actions', compact('bimbingan'));
             })
             ->toJson();
     }
 }
 public function exportExcel()
 {
-    return Excel::download(new adminsExport, 'admins.xlsx');
+    return Excel::download(new bimbingansExport, 'bimbingans.xlsx');
 }
 
 public function exportPdf()
 {
-    $admins = admin::all();
+    $bimbingans = bimbingan::all();
 
-    $pdf = PDF::loadView('admin.export_pdf', compact('admins'));
+    $pdf = PDF::loadView('bimbingan.export_pdf', compact('bimbingans'));
 
-    return $pdf->download('admins.pdf');
+    return $pdf->download('bimbingans.pdf');
 }
 
 }

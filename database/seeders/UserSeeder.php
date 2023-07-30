@@ -18,18 +18,21 @@ class UserSeeder extends Seeder
                 'name' => 'Administrator',
                 'email' => 'admin@admin',
                 'password' => bcrypt('adminadmin'),
+                'no-hp' => '1234',
                 'positions_id' => 3
             ],
             [
                 'name' => 'Pelajar',
                 'email' => 'pelajar@pelajar',
                 'password' => bcrypt('pelajarpelajar'),
+                'no-hp' => '1234',
                 'positions_id' => 1
             ],
             [
                 'name' => 'Pengajar',
                 'email' => 'pengajarr@pengajar',
                 'password' => bcrypt('pengajarpengajar'),
+                'no-hp' => '1234',
                 'positions_id' => 2
             ],
         ]);
