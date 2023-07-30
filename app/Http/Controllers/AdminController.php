@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Position;
+use App\Models\Bimbingan;
 // use App\Models\Admin;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
@@ -30,12 +31,12 @@ class AdminController extends Controller
          $pageTitle = 'List Produk';
 
          // Eloquent ORM with select
-         $admins = Admin::all();
+         $bimbingans = Bimbingan::all();
 
 
          return view('admin.index', [
              'pageTitle' => $pageTitle,
-             'admins' => $admins
+             'bimbingan' => $bimbingans
          ]);
      }
     /**

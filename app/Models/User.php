@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'no-hp',
-        'position'
+        'positions_id'
     ];
 
     /**

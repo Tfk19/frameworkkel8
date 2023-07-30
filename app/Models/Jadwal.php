@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-// use RealRashid\SweetAlert\Facades\Alert;
+use Database\Factories\JadwalFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Jadwal extends Model
 {
     use HasFactory;
 
-    public function users()
+    public function bimbingans()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Bimbingan::class);
     }
 }
