@@ -50,23 +50,24 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="">
-                            {{ __('Login') }}
-                        </button>
 
-                        @if (Route::has('password.request'))
-                             @endif
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>
-                    {{-- <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a> --}}
-                        <button type="button" class="btn btn-light btn-lg col-2 "style="margin-top:-120px;margin-left:25px;height:50px"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
-                    </li>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection

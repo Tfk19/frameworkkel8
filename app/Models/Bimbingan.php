@@ -2,40 +2,17 @@
 
 namespace App\Models;
 
-// use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bimibingan extends Model
+class Bimbingan extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'nama',
-        'umur',
-        'domisili',
-        'jadwals_id'
-    ];
-    public function jadwal()
+    use HasFactory;
+    public function user()
     {
-        return $this->belongsTo(Jadwal::class);
+        return $this->belongsTo(User::class);
     }
-    public function bimbingan()
-{
-    $pageTitle = 'Register Bimbingan';
 
-    return view('bimbingan.create', compact('pageTitle'));
-}
-    // public function register()
-    // {
-    //     $pageTitle = 'Register Bimbingan';
-
-    //     return view('bimbingan.create', compact('pageTitle'));
-    // }
+    // Define the relationship with the User model for "ustad"
 
 }

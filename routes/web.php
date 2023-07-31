@@ -1,16 +1,9 @@
 <?php
-use App\Http\Controllers\MateriController;
-use App\Http\Controllers\TentangController;
-use App\Http\Controllers\BimbingantaController;
-use App\Http\Controllers\BimbinganController;
-use App\Http\Controllers\DaftarBimbinganController;
-use App\Http\Controllers\JadwalController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\LoginController;
-// use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
+use App\Http\Controllers\BimbinganController;
+use App\Http\Controllers\JadwalController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,23 +16,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Auth::routes();
-Route::get('/', [HomeController::class,'index'])->name('home');
-Route::get('home', [HomeController::class])->name('home');
-Route::get('tentang', TentangController::class)->name('tentang');
-Route::get('materi', MateriController::class)->name('materi');
-Route::resource('bimbingan', BimbinganController::class);
-Route::get('bimbinganta', BimbingantaController::class)->name('bimbinganta')->middleware('auth');
-Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
-
-
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/', function () {
+    return view('home');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('admmins.downloadFile');
+Auth::routes();
 
-// Route::get('getAdmins', [AdminController::class, 'getData'])->name('admins.getData');
+Route::group(['middleware'=>'auth'],function(){
+    Route::resource('Bimbingan', BimbinganController::class);
+    Route::get('jadwal', JadwalController::class)->name('jadwal');
 
-// Route::get('exportExcel', [AdminController::class, 'exportExcel'])->name('admins.exportExcel');
-// Route::get('exportPdf', [AdminController::class, 'exportPdf'])->name('admins.exportPdf');
+});
+
 

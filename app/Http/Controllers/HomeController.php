@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use RealRashid\SweetAlert\Facades\Alert;
+
 class HomeController extends Controller
 {
-    function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        $pageTitle = 'Home';
-        return view('Home', ['pageTitle' =>$pageTitle]);
+        return view('home');
     }
 }

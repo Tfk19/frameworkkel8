@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
@@ -13,21 +11,22 @@
         <div class="col">
             <div class="card" style="background-color:  #234E52; height: 40rem ">
                 <div class="card-body" >
-                    <form method="POST" action="{{ route('bimbingan.store') }}">
+                    <form method="POST" action="{{ route('Bimbingan.store') }}">
                         @csrf
 
                         <div class="row mb-3">
-
-                            <label for="nama" class="col-md-8 mx-auto fw-bold mt-5 fs-5" style="color: #ffffff">{{ __('Nama') }}</label>
+                            <input class="form-control @error ('firstName') is-invalid @enderror " type="hidden" name="iduser" id="iduser" value="{{Auth::user()->id}}">
+                            <label for="nama" class="col-md-8 mx-auto fw-bold mt-5 fs-5" style="color: #ffffff">Nama :    {{ Auth::user()->name }}</label>
 
                             <div class="col-md-8 mx-auto mt-2">
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
+                                {{-- <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
 
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
+
                             </div>
                         </div>
 
@@ -60,18 +59,38 @@
                         </div>
 
                         <div class="col-md-12 mb-3">
-                            <label for="jadwals_id" class="form-label">Method Bimbingan</label>
-                            <select name="jadwals_id" id="jadwals_id" class="form-select">
-
-                                <option value="1">Offline -- Pagi</option>
-                                <option value="2">Offline -- Siang</option>
-                                <option value="3">Offline -- Malam</option>
-                                <option value="4">Online -- Pagi</option>
-                                <option value="5">Online -- Siang</option>
-                                <option value="6">Online -- Malam</option>
-
+                            <label for="type" class="form-label">Method Bimbingan</label>
+                            <select name="type" id="type" class="form-select">
+                                <option value="">pilih metode</option>
+                                <option value="online">Online</option>
+                                <option value="ofline">Offline</option>
                             </select>
-                            @error('jadwals_id')
+                            @error('type')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="jam" class="form-label">Method Bimbingan</label>
+                            <select name="jam" id="jam  " class="form-select">
+                                <option value="">pilih waktu</option>
+                                <option value="pagi">Pagi</option>
+                                <option value="siang">Siang</option>
+                                <option value="malam">Malam</option>
+                            </select>
+                            @error('jam')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="ustad" class="form-label">Pilih Ustad</label>
+                            <select name="ustad" id="ustad" class="form-select">
+                                <option value="">pilih ustad</option>
+                                @foreach ($datas as $data)
+                                    <option value="{{$data->id}}">{{$data->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('jam')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
@@ -95,5 +114,4 @@
     <p class="text-center fs-2 mb-5 fw-bold">Telah Mengikuti Program Ini</p>
 
 </div>
-
 @endsection
