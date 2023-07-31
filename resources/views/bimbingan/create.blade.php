@@ -59,8 +59,8 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                            <label for="jadwals_id" class="form-label">Method Bimbingan</label>
+                        <div class="col-md-7 mb-5 mx-auto">
+                            <label for="jadwals_id" class="form-label col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff" >Method Bimbingan</label>
                             <select name="jadwals_id" id="jadwals_id" class="form-select">
 
                                 <option value="1">Offline -- Pagi</option>

@@ -11,8 +11,8 @@
 
     <div class="">
         <div class="col">
-            <div class="card" style="background-color:  #234E52; height: 40rem ">
-                <div class="card-body" >
+            <div class="card mb-5" style="background-color:  #234E52; height: 45rem ">
+                <div class="card-body mb-5" >
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -74,8 +74,8 @@
                                 <input id="no-hp" type="integer" class="form-control @error('no-hp') is-invalid @enderror" name="no-hp" value="{{ old('no-hp') }}" required autocomplete="no-hp" autofocus>
                             </div>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="position" class="form-label">Position</label>
+                        <div class="col-md-7 mb-5 mx-auto">
+                            <label for="position" class="form-label fw-bold fs-5" style="color: #ffffff">Sebagai</label>
                             <select name="positions_id" id="positions_id" class="form-select">
 
                                 <option value="1">Pelajar</option>
@@ -89,7 +89,7 @@
 
                         <div class="row">
                             <div class="mx-auto"></div>">
-                                <button type="submit" class="btn btn-light btn-lg col-2 mx-auto "style="margin-top:50px;margin-left:25px;height:50px"><b
+                                <button type="submit" class="btn btn-light btn-lg col-2 mx-auto "style="margin-left:25px;height:50px"><b
                                     style="color: #234E52">Submit</b></button>
                             </div>
                         </div>
