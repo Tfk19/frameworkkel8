@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Bimbingan extends Model
 {
     use HasFactory;
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
-    // Define the relationship with the User model for "ustad"
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
 }
