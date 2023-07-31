@@ -33,7 +33,7 @@
                         <a href="{{ route('materi') }}" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="{{ route('bimbingan') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
+                        <a href="{{ route('bimbinganta') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3"><a href="{{ route('jadwal') }}" class="nav-link @if($currentRouteName == 'jadwal.index') active @endif text-black">Jadwalku</a>
                     <!-- Authentication Links -->
