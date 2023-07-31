@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="ms-0 ps-0 me-0 container">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
@@ -16,7 +15,7 @@
   </div>
   <div class="row mb-0">
     <div class="col align-center">
-        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('daftarbimbingan') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
+        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('Bimbingan.create') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
         </button>
     </div>
 </div>
@@ -90,4 +89,5 @@
           <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
+
 @endsection

@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserSeeder extends Seeder
+class Userseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,19 +18,19 @@ class UserSeeder extends Seeder
                 'name' => 'Administrator',
                 'email' => 'admin@admin',
                 'password' => bcrypt('adminadmin'),
-                'positions_id' => 3
+                'role' => 'admin'
             ],
             [
                 'name' => 'Pelajar',
                 'email' => 'pelajar@pelajar',
                 'password' => bcrypt('pelajarpelajar'),
-                'positions_id' => 1
+                'role' => 'santri'
             ],
             [
                 'name' => 'Pengajar',
                 'email' => 'pengajarr@pengajar',
                 'password' => bcrypt('pengajarpengajar'),
-                'positions_id' => 2
+                'role' => 'ustad'
             ],
         ]);
     }

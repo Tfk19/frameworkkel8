@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="ms-0 ps-0 me-0 container">
+<div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 mt-auto mb-5 pb-5 card-img-overlay img-fluid" style="width:500px;" src="{{ Vite::asset('resources/images/bimbingantajwid.png') }}" alt="text main">
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
+    <button type="button" class="btn btn-light btn-lg col-2 ms-5 "style="font-size:16px;margin-top:-500px;margin-left:25px;height:50px;border:none"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
+    <div class="aa">
+    <button type="button" class="aa btn btn-success btn-lg col-2  "
+    style="text-decoration:none ;font-size:16px;margin-left:270px;margin-top:-285px;height:50px;border:none">
+    <b><a style="text-decoration:none;color:white"href="">LEBIH LANJUT</a></b></button>
+    </div>
 </div>
 
 </div>
@@ -14,12 +20,10 @@
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <div class="row mb-0">
-    <div class="col align-center">
-        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('bimbingan.create') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
-        </button>
-    </div>
-</div>
+  <h3 class="text-center fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" >خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وَ عَلَّمَهُ</h3>
+  <h3 class="text-center fs-2 fw-bold">"Sebaik-Baik Diantara Kamu Adalah</h3>
+  <h3 class="text-center fs-2 fw-bold mb-5"> Orang Yang Belajar Al-Qur'an dan Mengajarkannya"</h3>
+
   <div class="card-group" style="height: 25rem;">
     <div class="card">
       <img class="card-img-top img" src="{{ Vite::asset('resources/images/kotak.png') }}" >
@@ -90,4 +94,5 @@
           <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
+
 @endsection
