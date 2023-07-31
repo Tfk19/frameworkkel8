@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Bimbingan;
+use App\Models\Admin;
 use App\Models\Position;
-// use App\Models\Bimbingan;
+use App\Models\Bimbingan;
+use App\Models\Jadwal;
+use App\Http\Controllers\JadwalController;
+// use App\Models\Admin;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\exportExcel;
-use App\Exports\BimbingansExport;
+use App\Exports\AdminsExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -30,12 +33,12 @@ class BimbinganController extends Controller
          $pageTitle = 'List Produk';
 
          // Eloquent ORM with select
-         $Bimbingans = Bimbingan::all();
+         $bimbingans = Bimbingan::all();
 
 
-         return view('Bimbingan.index', [
+         return view('bimbingan.index', [
              'pageTitle' => $pageTitle,
-             'Bimbingans' => $Bimbingans
+             'bimbingan' => $bimbingans
          ]);
      }
     /**
@@ -46,9 +49,9 @@ class BimbinganController extends Controller
         $pageTitle = 'Create Data';
 
         // ELOQUENT
-        $positions = Position::all();
+        $jadwals = Jadwal::all();
 
-        return view('Bimbingan.create', compact('pageTitle', 'positions'));
+        return view('bimbingan.create', compact('pageTitle', 'jadwals'));
     }
 
     public function store(Request $request)
@@ -60,10 +63,10 @@ class BimbinganController extends Controller
     ];
 
     $validator = Validator::make($request->all(), [
-        'firstName' => 'required',
-        'lastName' => 'required',
-        'email' => 'required|email',
-        'age' => 'required|numeric',
+        'nama' => 'required',
+        'umur' => 'required',
+        'domisili' => 'required',
+        'jadwal_id' => 'required',
     ], $messages);
 
     if ($validator->fails()) {
@@ -72,34 +75,33 @@ class BimbinganController extends Controller
 
 
     // Get File
-    $file = $request->file('cv');
+    // $file = $request->file('cv');
 
-    if ($file != null) {
-        $originalFilename = $file->getClientOriginalName();
-        $encryptedFilename = $file->hashName();
+    // if ($file != null) {
+    //     $originalFilename = $file->getClientOriginalName();
+    //     $encryptedFilename = $file->hashName();
 
-        // Store File
-        $file->store('public/files');
-    }
+    //     Store File
+    //     $file->store('public/files');
+    // }
 
     // ELOQUENT
-    $Bimbingan = New Bimbingan;
-    $Bimbingan->firstname = $request->firstName;
-    $Bimbingan->lastname = $request->lastName;
-    $Bimbingan->email = $request->email;
-    $Bimbingan->age = $request->age;
-    $Bimbingan->position_id = $request->position;
+    $bimbingan = New bimbingan;
+    $bimbingan->nama = $request->nama;
+    $bimbingan->umur = $request->umur;
+    $bimbingan->domisili = $request->domisili;
+    $bimbingan->jadwal_id = $request->jadwal;
 
-    if ($file != null) {
-        $Bimbingan->original_filename = $originalFilename;
-        $Bimbingan->encrypted_filename = $encryptedFilename;
-    }
+        // if ($file != null) {
+        //     $bimbingan->original_filename = $originalFilename;
+        //     $bimbingan->encrypted_filename = $encryptedFilename;
+        // }
 
-    $Bimbingan->save();
+    $bimbingan->save();
 
-    Alert::success('Added Successfully', 'Bimbingan Data Added Successfully.');
+    Alert::success('Added Successfully', 'bimbingan Data Added Successfully.');
 
-        return redirect()->route('Bimbingans.index');
+        return redirect()->route('bimbingans.index');
 }
 
     /**
@@ -112,9 +114,9 @@ class BimbinganController extends Controller
         $pageTitle = 'Detail';
 
         // ELOQUENT
-        $Bimbingan = Bimbingan::find($id);
+        $bimbingan = Bimbingan::find($id);
 
-        return view('Bimbingan.show', compact('pageTitle', 'Bimbingan'));
+        return view('bimbingan.show', compact('pageTitle', 'bimbingan'));
     }
 
 
@@ -124,13 +126,13 @@ class BimbinganController extends Controller
      */
     public function edit(string $id)
 {
-    $pageTitle = 'Edit Bimbingan';
+    $pageTitle = 'Edit bimbingan';
 
     // ELOQUENT
-    $positions = Position::all();
-    $Bimbingan = Bimbingan::find($id);
+    $jadwals = Jadwal::all();
+    $bimbingan = bimbingan::find($id);
 
-    return view('Bimbingan.edit', compact('pageTitle', 'positions', 'Bimbingan'));
+    return view('bimbingan.edit', compact('pageTitle', 'jadwals', 'bimbingan'));
 }
 
 // use RealRashid\SweetAlert\Facades\Alert;
@@ -143,10 +145,10 @@ public function update(Request $request, string $id)
     ];
 
     $validator = Validator::make($request->all(), [
-        'firstName' => 'required',
-        'lastName' => 'required',
-        'email' => 'required|email',
-        'age' => 'required|numeric',
+        'nama' => 'required',
+        'umur' => 'required',
+        'domisili' => 'required',
+        'jadwal_id' => 'required',
     ], $messages);
 
     if ($validator->fails()) {
@@ -165,30 +167,29 @@ public function update(Request $request, string $id)
         $file->store('public/files');
 
 
-        $Bimbingan = Bimbingan::find($id);
-        if ($Bimbingan->encrypted_filename) {
-            Storage::delete('public/files/'.$Bimbingan->encrypted_filename);
+        $bimbingan = bimbingan::find($id);
+        if ($bimbingan->encrypted_filename) {
+            Storage::delete('public/files/'.$bimbingan->encrypted_filename);
         }
     }
 
     // ELOQUENT
-    $Bimbingan = Bimbingan::find($id);
-    $Bimbingan->firstname = $request->input('firstName');
-    $Bimbingan->lastname = $request->input('lastName');
-    $Bimbingan->email = $request->input('email');
-    $Bimbingan->age = $request->input('age');
-    $Bimbingan->position_id = $request->input('position');
+    $bimbingan = New bimbingan;
+    $bimbingan->nama = $request->nama;
+    $bimbingan->umur = $request->umur;
+    $bimbingan->domisili = $request->domisili;
+    $bimbingan->jadwal_id = $request->jadwal;
 
     if ($file != null) {
-        $Bimbingan->original_filename = $originalFilename;
-        $Bimbingan->encrypted_filename = $encryptedFilename;
+        $bimbingan->original_filename = $originalFilename;
+        $bimbingan->encrypted_filename = $encryptedFilename;
     }
 
-    $Bimbingan->save();
+    $bimbingan->save();
 
-    Alert::success('Changed Successfully', 'Bimbingan Data Changed Successfully.');
+    Alert::success('Changed Successfully', 'bimbingan Data Changed Successfully.');
 
-    return redirect()->route('Bimbingans.index');
+    return redirect()->route('bimbingans.index');
 }
 
     /**
@@ -198,18 +199,18 @@ public function update(Request $request, string $id)
     public function destroy(string $id)
 {
     // ELOQUENT
-    Bimbingan::find($id)->delete();
+    bimbingan::find($id)->delete();
 
-    Alert::success('Deleted Successfully', 'Bimbingan Data Deleted Successfully.');
-    return redirect()->route('Bimbingans.index');
+    Alert::success('Deleted Successfully', 'bimbingan Data Deleted Successfully.');
+    return redirect()->route('bimbingans.index');
 
 }
 
-public function downloadFile($BimbinganId)
+public function downloadFile($bimbinganId)
 {
-    $Bimbingan = Bimbingan::find($BimbinganId);
-    $encryptedFilename = 'public/files/'.$Bimbingan->encrypted_filename;
-    $downloadFilename = Str::lower($Bimbingan->firstname.'_'.$Bimbingan->lastname.'_cv.pdf');
+    $bimbingan = bimbingan::find($bimbinganId);
+    $encryptedFilename = 'public/files/'.$bimbingan->encrypted_filename;
+    $downloadFilename = Str::lower($bimbingan->firstname.'_'.$bimbingan->lastname.'_cv.pdf');
 
     if(Storage::exists($encryptedFilename)) {
         return Storage::download($encryptedFilename, $downloadFilename);
@@ -217,29 +218,29 @@ public function downloadFile($BimbinganId)
 }
 public function getData(Request $request)
 {
-    $Bimbingans = Bimbingan::with('position');
+    $bimbingans = bimbingan::with('jadwal');
 
     if ($request->ajax()) {
-        return datatables()->of($Bimbingans)
+        return datatables()->of($bimbingans)
             ->addIndexColumn()
-            ->addColumn('actions', function($Bimbingan) {
-                return view('Bimbingan.actions', compact('Bimbingan'));
+            ->addColumn('actions', function($bimbingan) {
+                return view('bimbingan.actions', compact('bimbingan'));
             })
             ->toJson();
     }
 }
 public function exportExcel()
 {
-    return Excel::download(new BimbingansExport, 'Bimbingans.xlsx');
+    return Excel::download(new bimbingansExport, 'bimbingans.xlsx');
 }
 
 public function exportPdf()
 {
-    $Bimbingans = Bimbingan::all();
+    $bimbingans = bimbingan::all();
 
-    $pdf = PDF::loadView('Bimbingan.export_pdf', compact('Bimbingans'));
+    $pdf = PDF::loadView('bimbingan.export_pdf', compact('bimbingans'));
 
-    return $pdf->download('Bimbingans.pdf');
+    return $pdf->download('bimbingans.pdf');
 }
 
 }

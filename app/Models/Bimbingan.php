@@ -18,18 +18,35 @@ class Bimbingan extends Model
 =======
 class Bimibingan extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'nama',
+        'umur',
+        'domisili',
+        'jadwals_id'
+    ];
     public function jadwal()
     {
         return $this->belongsTo(Jadwal::class);
     }
-    public function registerbimbingan()
-    {
-        $pageTitle = 'Register Bimbingan';
+    public function bimbingan()
+{
+    $pageTitle = 'Register Bimbingan';
 
-        return view('daftarbimbingan', compact('pageTitle'));
-    }
+    return view('bimbingan.create', compact('pageTitle'));
+}
+    // public function register()
+    // {
+    //     $pageTitle = 'Register Bimbingan';
+
+    //     return view('bimbingan.create', compact('pageTitle'));
+    // }
 
 >>>>>>> 1f4fd0ebbac74530ec26d31e517a02a034e77fbc
 }

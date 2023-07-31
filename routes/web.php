@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\BimbingantaController;
 use App\Http\Controllers\BimbinganController;
 use App\Http\Controllers\DaftarBimbinganController;
 use App\Http\Controllers\JadwalController;
@@ -27,15 +28,13 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
-<<<<<<< HEAD
 // Route::resource('admins', AdminController::class);
-// Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
-Route::get('bimbingan', BimbinganController::class)->name('bimbingan');
-=======
-Route::resource('admins', AdminController::class);
-Route::get('daftarbimbingan', DaftarBimbinganController::class)->name('daftarbimbingan');
-Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
->>>>>>> 1f4fd0ebbac74530ec26d31e517a02a034e77fbc
+Route::resource('bimbingan', BimbinganController::class);
+// Route::resource('bimbingan', 'BimbinganController')->name('bimbingan')->parameters([
+//     'bimbingan' => 'id' // Assuming 'id' is the parameter for the route.
+// ]);
+// Route::get('daftarbimbingan', DaftarBimbinganController::class)->name('daftarbimbingan');
+Route::get('bimbinganta', BimbingantaController::class)->name('bimbinganta')->middleware('auth');
 Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
 // Route::resource('employees', EmployeeController::class)->middleware('auth');
 
@@ -43,10 +42,10 @@ Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth'
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('admmins.downloadFile');
+// Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('admmins.downloadFile');
 
-Route::get('getAdmins', [AdminController::class, 'getData'])->name('admins.getData');
+// Route::get('getAdmins', [AdminController::class, 'getData'])->name('admins.getData');
 
-Route::get('exportExcel', [AdminController::class, 'exportExcel'])->name('admins.exportExcel');
-Route::get('exportPdf', [AdminController::class, 'exportPdf'])->name('admins.exportPdf');
+// Route::get('exportExcel', [AdminController::class, 'exportExcel'])->name('admins.exportExcel');
+// Route::get('exportPdf', [AdminController::class, 'exportPdf'])->name('admins.exportPdf');
 
