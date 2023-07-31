@@ -10,8 +10,8 @@ class Jadwal extends Model
 {
     use HasFactory;
 
-    public function bimbingans()
+    public function users()
     {
-        return $this->hasMany(Bimbingan::class);
+        return $this->hasMany(User::class);
     }
 }
