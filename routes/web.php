@@ -28,15 +28,9 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
-// Route::resource('admins', AdminController::class);
 Route::resource('bimbingan', BimbinganController::class);
-// Route::resource('bimbingan', 'BimbinganController')->name('bimbingan')->parameters([
-//     'bimbingan' => 'id' // Assuming 'id' is the parameter for the route.
-// ]);
-// Route::get('daftarbimbingan', DaftarBimbinganController::class)->name('daftarbimbingan');
 Route::get('bimbinganta', BimbingantaController::class)->name('bimbinganta')->middleware('auth');
 Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
-// Route::resource('employees', EmployeeController::class)->middleware('auth');
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
