@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -26,9 +27,10 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('home', [HomeController::class])->name('home');
 Route::get('tentang', TentangController::class)->name('tentang');
 Route::get('materi', MateriController::class)->name('materi');
-Route::resource('admins', AdminController::class);
-Route::get('bimbingan', BimbinganController::class)->name('bimbingan')->middleware('auth');
-Route::get('jadwal', JadwalController::class)->name('jadwal')->middleware('auth');
+Route::resource('bimbingans', BimbinganController::class);
+
+Route::get('jadwal', [BimbinganController::class, 'index'])->name('jadwal')->middleware('auth');
+
 // Route::resource('employees', EmployeeController::class)->middleware('auth');
 
 

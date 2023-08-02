@@ -89,4 +89,17 @@
           <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
+
+              <ul>
+                  @foreach ($bimbingans as $bimbingan)
+                      <li>
+                          Nama: {{ $bimbingan->nama }}
+                          Umur: {{ $bimbingan->umur }}
+                          Domisili: {{ $bimbingan->domisili }}
+                          Method Bimbingan: {{ $bimbingan->method_bimbingan_id }}
+                      </li>
+                  @endforeach
+              </ul>
+          </div>
+
 @endsection
