@@ -24,13 +24,13 @@ class Userseeder extends Seeder
                 'name' => 'Pelajar',
                 'email' => 'pelajar@pelajar',
                 'password' => bcrypt('pelajarpelajar'),
-                'role' => 'santri'
+                'role' => 'pelajar'
             ],
             [
                 'name' => 'Pengajar',
                 'email' => 'pengajarr@pengajar',
                 'password' => bcrypt('pengajarpengajar'),
-                'role' => 'ustad'
+                'role' => 'pengajar'
             ],
         ]);
     }

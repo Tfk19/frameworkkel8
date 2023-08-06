@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('umur');
             $table->string('domisili');
-            $table->enum('type',['online','ofline']);
-            $table->enum('waktu',['pagi','siang','malam']);
+            $table->enum('type',['Online','Offline']);
+            $table->enum('waktu',['Pagi','Siang','Malam']);
+            $table->enum('linkwa',['https://chat.whatsapp.com/C9l0JyAlF28FXMogbQ7nDA']);
             $table->timestamps();
         });
     }

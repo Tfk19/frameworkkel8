@@ -3,7 +3,7 @@
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <h3 class="text-center fs-2 fw-bold" style="color: #234E52; font-family: 'inter'; " ><b>TAJWIDKU</b></h3>
+  <h3 class="text-center fs-2 fw-bold" style="color: #234E52;font-family: sans-serif" ><b>TAJWIDKU</b></h3>
   <h3 class="text-center fs-1 fw-bold">FORM PENDAFTARAN </h3>
   <h3 class="text-center fs-1 fw-bold mb-5"> BIMBINGAN</h3>
 
@@ -58,22 +58,22 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                            <label for="type" class="form-label">Method Bimbingan</label>
+                        <div class="col-md-8 mx-auto mt-2">
+                            <label for="type" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">Method Bimbingan</label>
                             <select name="type" id="type" class="form-select">
-                                <option value="">pilih metode</option>
+                                <option value="">Pilih Metode</option>
                                 <option value="online">Online</option>
-                                <option value="ofline">Offline</option>
+                                <option value="offline">Offline</option>
                             </select>
                             @error('type')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                            <label for="jam" class="form-label">Method Bimbingan</label>
-                            <select name="jam" id="jam  " class="form-select">
-                                <option value="">pilih waktu</option>
+                        <div class="col-md-8 mx-auto mt-2">
+                            <label for="jam" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">Method Bimbingan</label>
+                            <select name="jam" id="jam" class="form-select">
+                                <option value="">Pilih Waktu</option>
                                 <option value="pagi">Pagi</option>
                                 <option value="siang">Siang</option>
                                 <option value="malam">Malam</option>
@@ -82,10 +82,10 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="ustad" class="form-label">Pilih Ustad</label>
-                            <select name="ustad" id="ustad" class="form-select">
-                                <option value="">pilih ustad</option>
+                        <div class="col-md-8 mx-auto mt-2">
+                            <label for="pengajar" class="col-md-8 mx-auto fw-bold fs-5" style="color: #ffffff">Pilih Ustad</label>
+                            <select name="pengajar" id="pengajar" class="form-select">
+                                <option value="">Pilih pengajar</option>
                                 @foreach ($datas as $data)
                                     <option value="{{$data->id}}">{{$data->name}}</option>
                                 @endforeach
@@ -95,9 +95,9 @@
                             @enderror
                         </div>
 
-                        <div class="row">
-                            <div class="mx-auto"></div>">
-                                <button type="submit" class="btn btn-light btn-lg col-2 mx-auto "style="margin-top:50px;margin-left:25px;height:50px"><b
+                        <div class="row ">
+                            <div class="mx-auto mt-4">
+                                <button type="submit" class="btn btn-light btn-lg col-2"style="margin-left:500px;height:50px;"><b
                                     style="color: #234E52">Submit</b></button>
                             </div>
                         </div>

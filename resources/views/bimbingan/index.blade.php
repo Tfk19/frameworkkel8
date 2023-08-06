@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="ms-0 ps-0 me-0 container">
+<div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 mt-auto mb-5 pb-5 card-img-overlay img-fluid" style="width:500px;" src="{{ Vite::asset('resources/images/bimbingantajwid.png') }}" alt="text main">
-</div>
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 500px;margin-top:400px;" src="{{ Vite::asset('resources/images/bimbingantajwid.png') }}" alt="text main">
 
 </div>
 </div>
@@ -15,8 +14,7 @@
   </div>
   <div class="row mb-0">
     <div class="col align-center">
-        <button type="submit" class="btn bi-box-arrow-in-right"style="color: #234E52" ><a href="{{ route('Bimbingan.create') }}"style="color: #234E52; text-decoration:none" >  Daftar Bimbingan</a>
-        </button>
+        <a href="{{ route('Bimbingan.create') }}" class="mt-1 mb-5 btn btn-outline-success btn-lg aa bi-box-arrow-in-right" style="margin-left: 535px">   Daftar Sekarang</a>
     </div>
 </div>
   <div class="card-group" style="height: 25rem;">
@@ -60,12 +58,12 @@
     <div class="card-img-overlay text-end me-5 mt-5">
         <h5 class="card-title mt-5 fs-1  " >Ingin Belajar</h5>
         <h5 class="card-title fs-1 fw-bold " >Ilmu Tajwid Dari</h5>
-        <a href="#" class="btn btn-light btn-lg">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="btn btn-light btn-lg">Daftar Sekarang</a>
       <p class="card-text mt-2"><small>Bergabung Dengan Peserta Lainnya</small></p>
     </div>
   </div>
 
-  <div class="card-group display: flex;" style="height: 25rem;">
+  <div class="card-group display: flex;">
     <div class="ms-4 mt-4 me-4 mb-4 pb-4 card display: flex;" style="outline: none">
       <img class="card-img-top img" style="width: 180px" src="{{ Vite::asset('resources/images/persegipanjang.png') }}" >
       <div class="card-img-overlay text-end me-3 " style="f">
@@ -74,7 +72,7 @@
         <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
         <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
         <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-        <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
       </div>
     </div>
 
@@ -86,7 +84,7 @@
           <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
           <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
           <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-          <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
+          <a href="{{ route('Bimbingan.create') }}" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
 

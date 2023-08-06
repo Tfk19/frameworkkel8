@@ -18,7 +18,7 @@ class JadwalController extends Controller
         // $data  = DB:: table('bimbingans')
         //                 ->where('santri','5')
         //                 ->get();
-        $data = Bimbingan::where('name', $id) // Replace 'SantriName' with the actual name of the Santri you want to retrieve
+        $data = Bimbingan::where('name', $id) 
 
                 ->get();
         // var_dump($data);die();

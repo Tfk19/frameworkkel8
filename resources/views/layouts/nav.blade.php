@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-light">
     <div class="container">
         <i class="hexagon-fill me-2"></i>
-        <img class=" navbar-brand mb-0 ms-5 h1 img-fluid" style="width: 150px"
+        <img class=" navbar-brand ms-2 mb-0 h1 img-fluid" style="width: 150px"
         src="{{ Vite::asset('resources/images/logotajwidku.png') }}" alt="image" href="{{ route('home') }}">
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon text-black" style="color: red"></span>
@@ -18,7 +18,7 @@
 
             <div class="collapse navbar-collapse text-black" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto text-black">
+                {{-- <ul class="navbar-nav me-auto text-black"> --}}
 
                 </ul>
 
@@ -27,10 +27,10 @@
                     <li class="nav-item col-2 col-md-auto ps-3" style="">
                         <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif text-black">Home</a></li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="" class="nav-link @if($currentRouteName == 'tentang.index') active @endif text-black">Tentang Tajwidku</a>
+                        <a href="{{ route('tentang')}}" class="nav-link @if($currentRouteName == 'tentang.index') active @endif text-black">Tentang Tajwidku</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
+                        <a href="{{ route('materi')}}" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
                         <a href="{{ route('Bimbingan.index') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
@@ -57,7 +57,6 @@
                             </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a  class="btn my-2 ms-md-auto"><i class="bi-person-circle me-1"></i> My Profile</a>
                                 <a class="dropdown-item bi bi-lock-fill me-1" style="color: red" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
