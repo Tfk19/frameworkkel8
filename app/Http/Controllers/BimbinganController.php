@@ -25,7 +25,7 @@ class BimbinganController extends Controller
     public function create()
     {
         $data = DB:: table('users')
-                ->where('role','ustad')
+                ->where('role','pengajar')
                 ->get();
         // var_dump($data);die();
         return view('bimbingan.create',[
@@ -47,21 +47,21 @@ class BimbinganController extends Controller
             'domisili' => 'required',
             'type' => 'required',
             'jam' => 'required',
-            'ustad' => 'required'
+            'pengajar' => 'required'
         ],$messages);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $laporan = New Bimbingan();
-        $laporan->name = Auth::user()->name;
-        $laporan->user_id = $request->ustad;
-        $laporan->umur = $request->umur;
-        $laporan->domisili = $request->domisili;
-        $laporan->type = $request->type;
-        $laporan->waktu = $request->jam;
-        $laporan->save();
-        return redirect()->route('Bimbingan.index');
+        $bimbingan = New Bimbingan();
+        $bimbingan->name = Auth::user()->name;
+        $bimbingan->user_id = $request->pengajar;
+        $bimbingan->umur = $request->umur;
+        $bimbingan->domisili = $request->domisili;
+        $bimbingan->type = $request->type;
+        $bimbingan->waktu = $request->jam;
+        $bimbingan->save();
+        return redirect()->route('jadwal');
     }
 
     /**

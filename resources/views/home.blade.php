@@ -34,8 +34,6 @@
 </div>
 </div>
 </div>
-<br>
-<br>
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
@@ -89,7 +87,7 @@
     </div>
   </div>
 
-  <div class="card-group display: flex;" style="height: 25rem;">
+  <div class="card-group display: flex;">
     <div class="ms-4 mt-4 me-4 mb-4 pb-4 card display: flex;" style="outline: none">
       <img class="card-img-top img" style="width: 180px" src="{{ Vite::asset('resources/images/persegipanjang.png') }}" >
       <div class="card-img-overlay text-end me-3 " style="f">
@@ -98,7 +96,7 @@
         <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
         <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
         <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-        <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
+        <a href="#" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
       </div>
     </div>
 
@@ -110,7 +108,7 @@
           <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
           <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
           <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-          <a href="#" class="mt-3 btn btn-success btn-lg aa">Daftar Sekarang</a>
+          <a href="#" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
 @endsection
