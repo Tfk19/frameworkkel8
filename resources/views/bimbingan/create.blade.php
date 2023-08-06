@@ -58,8 +58,8 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                            <label for="type" class="form-label">Method Bimbingan</label>
+                        <div class="col-md-7 mx-auto">
+                            <label for="type" class="form-label" style="color: #ffffff">Method Bimbingan</label>
                             <select name="type" id="type" class="form-select">
                                 <option value="">pilih metode</option>
                                 <option value="online">Online</option>
@@ -70,7 +70,7 @@
                             @enderror
                         </div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-8 mx-auto mt-2 " style="color: #ffffff">
                             <label for="jam" class="form-label">Method Bimbingan</label>
                             <select name="jam" id="jam  " class="form-select">
                                 <option value="">pilih waktu</option>
@@ -82,7 +82,7 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-8 mx-auto mt-2 " style="color: #ffffff">
                             <label for="ustad" class="form-label">Pilih Ustad</label>
                             <select name="ustad" id="ustad" class="form-select">
                                 <option value="">pilih ustad</option>

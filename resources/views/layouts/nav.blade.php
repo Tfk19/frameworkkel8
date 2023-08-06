@@ -18,7 +18,7 @@
 
             <div class="collapse navbar-collapse text-black" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto text-black">
+                {{-- <ul class="navbar-nav me-auto text-black"> --}}
 
                 </ul>
 
@@ -27,10 +27,10 @@
                     <li class="nav-item col-2 col-md-auto ps-3" style="">
                         <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif text-black">Home</a></li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="" class="nav-link @if($currentRouteName == 'tentang.index') active @endif text-black">Tentang Tajwidku</a>
+                        <a href="{{ route('tentang') }}" class="nav-link @if($currentRouteName == 'tentang.index') active @endif text-black">Tentang Tajwidku</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
-                        <a href="" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
+                        <a href="{{ route('materi') }}" class="nav-link @if($currentRouteName == 'materi.index') active @endif text-black">Materi</a>
                     </li>
                     <li class="nav-item col-2 col-md-auto ps-3 ">
                         <a href="{{ route('Bimbingan.index') }}" class="nav-link @if($currentRouteName == 'bimbingan.index') active @endif text-black">Bimbingan</a>
@@ -43,11 +43,6 @@
 
                                 <a class="nav-link text fw-bold" style="color: red" href="{{ route('login') }}">{{ __('Login') }}</a>
 
-                            </li>
-                        @endif
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link text fw-bold" style="color: red" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
@@ -73,6 +68,9 @@
                         </li>
                     @endguest
                 </ul>
+                        </li>
+                    {{-- <li class="nav-item col-2 col-md-auto me-5 ps-3"><a href="{{ route('register') }}" class="nav-link @if($currentRouteName == 'bimbingan.register') active @endif text-danger"><b>Daftar Akun</b></a>
+                    </li> --}}
                 <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon text-black" style="color: red"></span>
                 </button>

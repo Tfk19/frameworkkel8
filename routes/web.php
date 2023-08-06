@@ -4,6 +4,10 @@ use App\Http\Controllers\BimbinganController;
 use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\TentangController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +33,6 @@ Route::group(['middleware'=>'auth'],function(){
 
 });
 
+Route::get('tentang', TentangController::class)->name('tentang');
+Route::get('materi', MateriController::class)->name('materi');
 
