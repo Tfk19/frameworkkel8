@@ -37,8 +37,6 @@
                 <th class="text-center">Type</th>
                 <th class="text-center">Waktu</th>
                 <th class="text-center">Link WA</th>
-
-
                 <th></th>
             </tr>
         </thead>
@@ -50,7 +48,7 @@
                     <td class="text-center">{{ $data->type }}</td>
                     <td class="text-center">{{ $data->waktu }}</td>
                     <td class="text-center"> <a class="bi-box-arrow-in-right fw-bold text-success" style="text-decoration:none" href="{{$data->linkwa }}">  Masuk Group Whatsapp </td>
-
+                    <td>@include('admin.actions')</td>
                 </tr>
             @endforeach
         </tbody>
