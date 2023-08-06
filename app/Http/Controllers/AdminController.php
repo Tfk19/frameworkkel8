@@ -45,7 +45,7 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -53,15 +53,33 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pageTitle = 'Edit Admin';
+
+        // ELOQUENT
+        $positions = Position::all();
+        $employee = Employee::find($id);
+
+        return view('employee.edit', compact('pageTitle', 'positions', 'employee'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'email' => 'Isi :attribute dengan format yang benar',
+            'numeric' => 'Isi :attribute dengan angka'
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required|email',
+            'age' => 'required|numeric',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
     }
 
     /**

@@ -69,8 +69,13 @@ class BimbinganController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pageTitle = 'Detail Produk';
+
+        $bimbingan = Bimbingan::find($id);
+
+        return view('bimbingan.show', compact('pageTitle', 'bimbingan'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -93,6 +98,9 @@ class BimbinganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // QUERY BUILDER
+        Bimbingan::find($id)->delete();
+
+    return redirect()->route('admin.index');
     }
 }

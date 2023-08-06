@@ -23,7 +23,7 @@
         <tbody>
             @foreach ($datas as $data)
                 <tr>
-                    <td class="text-center">{{ $data->user->name }}</td>
+                    <td class="text-center">{{ $data->users->name }}</td>
                     <td class="text-center">{{ $data->type }}</td>
                     <td class="text-center">{{ $data->waktu }}</td>
                     <td class="text-center"> <a class="bi-box-arrow-in-right fw-bold text-success" style="text-decoration:none" href="{{$data->linkwa }}">  Masuk Group Whatsapp </td>
