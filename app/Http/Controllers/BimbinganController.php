@@ -69,7 +69,10 @@ class BimbinganController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // ELOQUENT
+        $bimbingan= Bimbingan::find($id);
+
+        return view('Bimbingan.show',compact('bimbingan'));
     }
 
     /**
