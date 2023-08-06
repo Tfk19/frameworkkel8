@@ -69,11 +69,18 @@ class BimbinganController extends Controller
      */
     public function show(string $id)
     {
+<<<<<<< HEAD
         $pageTitle = 'Detail Produk';
 
         $bimbingan = Bimbingan::find($id);
 
         return view('bimbingan.show', compact('pageTitle', 'bimbingan'));
+=======
+        // ELOQUENT
+        $bimbingan= Bimbingan::find($id);
+
+        return view('Bimbingan.show',compact('bimbingan'));
+>>>>>>> 01a983a42084816ef27cf9b8e090e2bd0417e313
     }
 
 
