@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
+
 class Bimbingan extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -32,11 +34,10 @@ class Bimbingan extends Model
      * @var array<int, string>
      */
     use HasFactory;
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
-    // Define the relationship with the User model for "ustad"
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
 }

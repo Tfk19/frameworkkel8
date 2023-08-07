@@ -43,6 +43,12 @@
                 <th class="text-center">Type</th>
                 <th class="text-center">Waktu</th>
                 <th class="text-center">Link WA</th>
+<<<<<<< HEAD
+                <th> </th>
+
+
+=======
+>>>>>>> 01a983a42084816ef27cf9b8e090e2bd0417e313
                 <th></th>
             </tr>
         </thead>
@@ -50,11 +56,15 @@
             @foreach ($datas as $data)
                 <tr>
                     <td class="text-center">{{ $data->name}}</td>
-                    <td class="text-center">{{ $data->user->name }}</td>
+                    <td class="text-center">{{ $data->users->name }}</td>
                     <td class="text-center">{{ $data->type }}</td>
                     <td class="text-center">{{ $data->waktu }}</td>
                     <td class="text-center"> <a class="bi-box-arrow-in-right fw-bold text-success" style="text-decoration:none" href="{{$data->linkwa }}">  Masuk Group Whatsapp </td>
+<<<<<<< HEAD
+                    <td>  @include('admin.actions')</td>
+=======
                     <td>@include('admin.actions')</td>
+>>>>>>> 01a983a42084816ef27cf9b8e090e2bd0417e313
                 </tr>
             @endforeach
         </tbody>

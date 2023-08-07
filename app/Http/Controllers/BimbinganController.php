@@ -71,11 +71,12 @@ class BimbinganController extends Controller
      */
     public function show(string $id)
     {
-        // ELOQUENT
         $bimbingan= Bimbingan::find($id);
 
         return view('Bimbingan.show',compact('bimbingan'));
+
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -151,6 +152,7 @@ class BimbinganController extends Controller
      */
     public function destroy(string $id)
     {
+
         Bimbingan::find($id)->delete();
 
         return redirect()->route('Admin.index');
@@ -172,6 +174,7 @@ class BimbinganController extends Controller
     public function exportExcel()
     {
         return Excel::download(new BimbingansExport, 'bimbingans.xlsx');
+
     }
 
 }
