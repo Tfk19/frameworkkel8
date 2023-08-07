@@ -7,6 +7,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PengajarController;
 use App\Http\Controllers\TentangController;
+use App\Models\Bimbingan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,5 @@ Route::group(['middleware'=>'auth'],function(){
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('Tentang', TentangController::class)->name('tentang');
 Route::get('Materi', MateriController::class)->name('materi');
+Route::get('exportExcel', [BimbinganController::class, 'exportExcel'])->name('bimbingan.exportExcel');
 

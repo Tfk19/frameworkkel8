@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
+<div class=" text-center mx-auto mt-2 mb-4 animated bounceInDown" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <h3 class="text-center fs-2 fw-bold" style="color: #234E52;font-family: sans-serif" ><b>TAJWIDKU</b></h3>
-  <h3 class="text-center fs-1 fw-bold">FORM PENDAFTARAN </h3>
-  <h3 class="text-center fs-1 fw-bold mb-5"> BIMBINGAN</h3>
+  <h3 class="text-center fs-2 fw-bold animated bounceInDown" style="color: #234E52;font-family: sans-serif" ><b>TAJWIDKU</b></h3>
+  <h3 class="text-center fs-1 fw-bold animated bounceInDown">FORM PENDAFTARAN </h3>
+  <h3 class="text-center fs-1 fw-bold mb-5 animated bounceInDown"> BIMBINGAN</h3>
 
-    <div class="">
+    <div class="animated bounceInUp">
         <div class="col">
             <div class="card" style="background-color:  #234E52; height: 40rem ">
                 <div class="card-body" >

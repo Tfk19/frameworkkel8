@@ -2,7 +2,7 @@
 @section('content')
 <div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 500px;margin-top:400px;" src="{{ Vite::asset('resources/images/jadwal.png') }}" alt="text main">
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid animated bounceInDown" style="width: 500px;margin-top:400px;" src="{{ Vite::asset('resources/images/jadwal.png') }}" alt="text main">
 
 </div>
 <br>

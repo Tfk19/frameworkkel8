@@ -22,12 +22,12 @@
 </div> --}}
 <div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
-    <button type="button" class="btn btn-light btn-lg col-2 ms-5 "style="font-size:16px;margin-top:-500px;margin-left:25px;height:50px;border:none"><b><a href="{{ route('register') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid animated bounceInDown" style="width: 700px;margin-top:200px;" src="{{ Vite::asset('resources/images/selamatdatang.png') }}" alt="text main">
+    <button type="button" class="btn btn-light btn-lg col-2 ms-5 animated bounceInUp "style="font-size:16px;margin-top:-500px;margin-left:25px;height:50px;border:none"><b><a href="{{ route('Bimbingan.create') }}" style="text-decoration: none;color: #234E52; ">DAFTAR SEKARANG</a></b></button>
     <div class="aa">
-    <button type="button" class="aa btn btn-success btn-lg col-2  "
+    <button type="button" class="aa btn btn-success btn-lg col-2 animated bounceInUp"
     style="text-decoration:none ;font-size:16px;margin-left:270px;margin-top:-285px;height:50px;border:none">
-    <b><a style="text-decoration:none;color:white"href="">LEBIH LANJUT</a></b></button>
+    <b><a style="text-decoration:none;color:white"href="{{ route('tentang') }}">LEBIH LANJUT</a></b></button>
     </div>
 </div>
 
@@ -82,7 +82,7 @@
     <div class="card-img-overlay text-end me-5 mt-5">
         <h5 class="card-title mt-5 fs-1  " >Ingin Belajar</h5>
         <h5 class="card-title fs-1 fw-bold " >Ilmu Tajwid Dari</h5>
-        <a href="#" class="btn btn-light btn-lg">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="btn btn-light btn-lg">Daftar Sekarang</a>
       <p class="card-text mt-2"><small>Bergabung Dengan Peserta Lainnya</small></p>
     </div>
   </div>
@@ -96,7 +96,7 @@
         <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
         <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
         <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-        <a href="#" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
       </div>
     </div>
 
@@ -108,7 +108,7 @@
           <h5 class="card-title ms-4 fs-2  fw-bold" style="color: #234E52">Lancar &</h5>
           <h5 class="card-title ms-4 fs-2 fw-bold " style="color: #234E52">Sesuai Kaidah</h5>
           <h5 class="card-title ms-4 fs-2 fst-normal " style="color: #234E52">#siapmengaji</h5>
-          <a href="#" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
+          <a href="{{ route('Bimbingan.create') }}" class="mt-3 btn btn-outline-success btn-lg aa">Daftar Sekarang</a>
         </div>
       </div>
 @endsection

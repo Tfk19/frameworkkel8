@@ -3,7 +3,7 @@
 @endphp
 
 <nav class="navbar navbar-expand-md navbar-dark bg-light">
-    <div class="container">
+    <div class="container animated bounceInLeft">
         <i class="hexagon-fill me-2"></i>
         <img class=" navbar-brand ms-2 mb-0 h1 img-fluid" style="width: 150px"
         src="{{ Vite::asset('resources/images/logotajwidku.png') }}" alt="image" href="{{ route('home') }}">

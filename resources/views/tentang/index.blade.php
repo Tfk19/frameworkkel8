@@ -3,7 +3,7 @@
 @section('content')
 <div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 450px;margin-top:400px;" src="{{ Vite::asset('resources/images/tentangtajwid.png') }}" alt="text main">
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid animated bounceInDown" style="width: 450px;margin-top:400px;" src="{{ Vite::asset('resources/images/tentangtajwid.png') }}" alt="text main">
 
 </div>
 <br>
@@ -11,7 +11,7 @@
 <div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <h3 class="text-center fs-1 fw-bold" style="color: #234E52; font-family: 'inter';" ><b>TAJWIDKU</b></h3>
+  <h3 class="text-center fs-1 fw-bold" style="color: #234E52;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif" ><b>TAJWIDKU</b></h3>
   <h3 class="text-center fs-2 ">“Merupakan Website Penyedia Jasa Pembelajaran Tajwid Secara Offine </h3>
   <h3 class="text-center fs-2  mb-5 ps-5"> Orang Yang Belajar Al-Qur'an dan Mengajarkannya"</h3>
 
@@ -71,7 +71,7 @@
     <div class="card-img-overlay text-end me-5 mt-5">
         <h5 class="card-title mt-5 fs-1  " >Ingin Belajar</h5>
         <h5 class="card-title fs-1 fw-bold " >Ilmu Tajwid Dari</h5>
-        <a href="#" class="btn btn-light btn-lg">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="btn btn-light btn-lg">Daftar Sekarang</a>
       <p class="card-text mt-2"><small>Bergabung Dengan Peserta Lainnya</small></p>
     </div>
   </div>

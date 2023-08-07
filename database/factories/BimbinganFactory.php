@@ -20,8 +20,8 @@ class BimbinganFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'user_id' =>fake()->randomElement(['1']),
-            'umur' => fake()->unique()->numberBetween(1,20),
+            'user_id' =>fake()->randomElement(['4','5','6']),
+            'umur' => fake()->numberBetween(1,20),
             'domisili' => fake()->city(),
             'type' => fake()->randomElement(['Online','Offline']),
             'waktu' => fake()->randomElement(['Pagi','Siang','Malam']),

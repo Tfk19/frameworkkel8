@@ -3,7 +3,7 @@
 @section('content')
 <div class="ms-0 ps-0 me-0">
     <img class="img ms-0 me-0 ps-0 card-img-top card-img-fluid" src="{{ Vite::asset('resources/images/gambarutama.png') }}" alt="main logo">
-    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid" style="width: 450px;margin-top:400px;" src="{{ Vite::asset('resources/images/materitajwid.png') }}" alt="text main">
+    <img class="rounded ms-4 ps-4 card-img-overlay img-fluid animated bounceInDown" style="width: 450px;margin-top:400px;" src="{{ Vite::asset('resources/images/materitajwid.png') }}" alt="text main">
 
 </div>
 <br>
@@ -154,7 +154,7 @@
     <div class="card-img-overlay text-end me-5 mt-5">
         <h5 class="card-title mt-5 fs-1  " >Ingin Belajar</h5>
         <h5 class="card-title fs-1 fw-bold " >Ilmu Tajwid Dari</h5>
-        <a href="#" class="btn btn-light btn-lg">Daftar Sekarang</a>
+        <a href="{{ route('Bimbingan.create') }}" class="btn btn-light btn-lg">Daftar Sekarang</a>
       <p class="card-text mt-2"><small>Bergabung Dengan Peserta Lainnya</small></p>
     </div>
   </div>
