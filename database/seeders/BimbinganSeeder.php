@@ -14,6 +14,6 @@ class Bimbinganseeder extends Seeder
      */
     public function run(): void
     {
-        Bimbingan::factory()->count(5)->create();
+        Bimbingan::factory()->count(200)->create();
     }
 }

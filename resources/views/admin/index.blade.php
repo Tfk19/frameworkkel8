@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class=" text-center mx-auto mt-2 mb-4" style="width: 150px;">
+<div class=" text-center mx-auto mt-2 mb-4 animated bounceInDown" style="width: 150px;">
     <img class="card-img-top img-fluid img" src="{{ Vite::asset('resources/images/LogoTajwid.png') }}" alt="...">
   </div>
-  <h3 class="text-center fs-2 fw-bold" style="color: #234E52;font-family: sans-serif" ><b>TAJWIDKU</b></h3>
-  <h3 class="text-center fs-1 fw-bold">DATA MASTER</h3>
-  <h3 class="text-center fs-1 fw-bold mb-5"> BIMBINGAN TAJWIDKU</h3>
+  <h3 class="text-center fs-2 fw-bold animated bounceInDown" style="color: #234E52;font-family: sans-serif" ><b>TAJWIDKU</b></h3>
+  <h3 class="text-center fs-1 fw-bold animated bounceInDown">DATA MASTER</h3>
+  <h3 class="text-center fs-1 fw-bold mb-5 animated bounceInDown"> BIMBINGAN TAJWIDKU</h3>
   {{-- <div class="col-lg-3 col-xl-6">
     <ul class="list-inline mb-0 float-end">
         <li class="list-inline-item">
@@ -19,17 +19,23 @@
             </a>
         </li>
         <li class="list-inline-item">|</li> --}}
+        <div class="ms-3 animated bounceInLeft">
         <li class="list-inline-item">
-            <a href="{{ route('Bimbingan.create') }}" class="btn btn-primary">
+            <a href="{{ route('bimbingan.exportExcel') }}" class="btn btn-outline-success">
+                <i class="bi bi-download me-1"></i> to Excel
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="{{ route('Bimbingan.create') }}" class="btn btn-success">
                 <i class="bi bi-plus-circle me-1"></i> Membuat Daftar Pengajar
             </a>
         </li>
+        </div>
     </ul>
-</div>
-</div>
+    </div>
 <hr>
-<div class="table-responsive border p-3 rounded-3">
-    <table class="table table-bordered table-hover table-striped mb-0 bg-white datatable" id="bimbinganTable">
+<div class="table-responsive border p-3 rounded-3 animated bounceInUp">
+    <table class="table table-bordered table-hover table-striped mb-0 bg-white" id="bimbinganTable">
         <thead>
             <tr>
                 <th class="text-center">Nama User</th>
@@ -62,8 +68,13 @@
                 </tr>
             @endforeach
         </tbody>
-
     </table>
-</div>
-</div>
-  @endsection
+    @push('scripts')
+    <script type="module">
+        $(document).ready(function() {
+            $('#bimbinganTable').DataTable();
+        });
+    </script>
+@endpush
+<div class="mb-5"></div>
+@endsection

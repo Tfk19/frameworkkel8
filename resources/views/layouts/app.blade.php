@@ -17,14 +17,16 @@
 
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss'])
 </head>
 <body>
     @include('layouts.nav')
     <div id="app">
         <main>
             @yield('content')
+            @vite('resources/js/app.js')
             @stack('scripts')
+
         </main>
     </div>
 </body>

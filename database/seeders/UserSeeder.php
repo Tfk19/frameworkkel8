@@ -33,6 +33,24 @@ class Userseeder extends Seeder
                 'password' => bcrypt('pengajarpengajar'),
                 'role' => 'pengajar'
             ],
+            [
+                'name' => 'Ust Abdul Somad',
+                'email' => 'somad@somad',
+                'password' => bcrypt('somadsomad'),
+                'role' => 'pengajar'
+            ],
+            [
+                'name' => 'Ust Hannan Attaki',
+                'email' => 'hannan@hannan',
+                'password' => bcrypt('hannanhannan'),
+                'role' => 'pengajar'
+            ],
+            [
+                'name' => 'Ust Adi Hidayat',
+                'email' => 'adi@adi',
+                'password' => bcrypt('adiadi123'),
+                'role' => 'pengajar'
+            ],
         ]);
     }
 }
